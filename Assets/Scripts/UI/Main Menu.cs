@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     }
     public void QuitGameMenu()
     {
+        UIManager.UIManagerInstance.SetFPSActive(false);
         UIManager.UIManagerInstance.QuitGameMenu();
     }
 }

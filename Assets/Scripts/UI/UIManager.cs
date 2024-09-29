@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+
+    [Tooltip("INPlayUI")]
     [SerializeField] private GameObject _mainMenuScreen;
     [SerializeField] private GameObject _gameCoverScreen;
     [SerializeField] private GameObject _settingsPage;
@@ -11,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _levelSelectionPage;
     [SerializeField] private Transform _screensParent;
 
+    [Tooltip("FPS")]
+    [SerializeField] private GameObject _fpsMarker; 
     public static UIManager UIManagerInstance { get; private set; }
     private CanvasGroup _gameCoverCanvasGroup;
 
@@ -50,7 +54,10 @@ public class UIManager : MonoBehaviour
         SetAsActiveScreen(_mainMenuScreen);
     }
 
-
+    public bool FPSMarkerActive()
+    {
+        return _fpsMarker.activeSelf; 
+    }
     public void SetLevelsScreen()
     {
         SetAsActiveScreen(_levelSelectionPage);
@@ -73,6 +80,14 @@ public class UIManager : MonoBehaviour
     {
         StartCoroutine(QuitGame());
     }
+
+    public void SetFPSActive(bool value)
+    {
+        _fpsMarker.gameObject.SetActive(value);
+    }
+
+  
+
     private IEnumerator QuitGame()
     {
         SetAsActiveScreen(_gameCoverScreen);
