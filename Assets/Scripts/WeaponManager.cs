@@ -13,10 +13,16 @@ public class WeaponManager : MonoBehaviour
 
     [SerializeField] private bool overheated;
 
+    public delegate void ShootAction();
+    public event ShootAction OnShoot;
+
     private void Update()
     {
+        currentHeat = Mathf.Clamp(currentHeat, 0f, maxHeat);
+
         timeTilNextShot -= Time.deltaTime * weaponStats.fireRate;
-        currentHeat -= Time.deltaTime * weaponStats.coolRate;
+        if(currentHeat > 0)
+            currentHeat -= Time.deltaTime * weaponStats.coolRate;
 
         if (currentHeat > maxHeat)
         {
@@ -41,5 +47,6 @@ public class WeaponManager : MonoBehaviour
 
         timeTilNextShot = 1f;
         currentHeat += weaponStats.heatPerShot;
+        OnShoot?.Invoke();
     }
 }

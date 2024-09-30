@@ -10,6 +10,9 @@ public class SpaceShipManager : MonoBehaviour
 
     private float timeTilShieldRecharge;
 
+    public delegate void DamageAction();
+    public event DamageAction OnTakeDamage;
+
     private void Awake()
     {
         currentHealth = shipStats.hullHealth;
@@ -34,6 +37,8 @@ public class SpaceShipManager : MonoBehaviour
         {
             Debug.Log("Die");
         }
+
+        OnTakeDamage?.Invoke();
     }
 
     private void Update()

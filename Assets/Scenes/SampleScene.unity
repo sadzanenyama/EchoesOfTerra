@@ -170,8 +170,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObjects: []
   itemsToPool:
-  - amountToPool: 100
+  - amountToPool: 25
     objectToPool: {fileID: 5398803838278727863, guid: 0aac631f15e156d4b86ca1dc884096ed,
+      type: 3}
+    shouldExpand: 1
+  - amountToPool: 25
+    objectToPool: {fileID: 7226583673155636401, guid: a2ab56839e1c9504ea9d141e95d0b16b,
       type: 3}
     shouldExpand: 1
 --- !u!1 &178230471
@@ -336,6 +340,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -475,6 +480,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 30, z: 0}
   followTime: 0.2
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakeTechnique: 0
+  _makeDefaultOnEnable: 1
+  _limitMagnitude: 0
+  _positionalMagnitudeLimit: 10
+  _rotationalMagnitudeLimit: 3
 --- !u!1 &409588789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,6 +1053,8 @@ GameObject:
   - component: {fileID: 1354475196}
   - component: {fileID: 1354475197}
   - component: {fileID: 1354475198}
+  - component: {fileID: 1354475199}
+  - component: {fileID: 1354475200}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1141,6 +1165,41 @@ MonoBehaviour:
   shipStats: {fileID: 11400000, guid: 15551aa19c1e24848a242de6d57d5199, type: 2}
   currentHealth: 0
   currentShield: 0
+--- !u!114 &1354475199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354475192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e91b77ebafd114fb2c3ef13260eaf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitShake: {fileID: 11400000, guid: cfb5721468f522e4984b6e517151f6d8, type: 2}
+  shootShake: {fileID: 11400000, guid: 731620b51cd09244db96cb38c89b18f0, type: 2}
+--- !u!135 &1354475200
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354475192}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1362081808
 PrefabInstance:
   m_ObjectHideFlags: 0
