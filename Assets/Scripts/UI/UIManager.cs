@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-
+  
     private IEnumerator ShowGameCoverThenFadeOut()
     {
   

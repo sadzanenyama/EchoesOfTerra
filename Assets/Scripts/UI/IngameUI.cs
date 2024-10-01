@@ -23,7 +23,7 @@ public class IngameUI : MonoBehaviour
             Instance = this;
         }
     }
-
+  
     public void ResetGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
