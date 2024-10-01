@@ -1279,6 +1279,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1888879208}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e0c00cc6043664f49acc81be5d8caf29,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1522853012}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0c00cc6043664f49acc81be5d8caf29, type: 3}
 --- !u!4 &460921568 stripped
@@ -3418,7 +3422,6 @@ Transform:
   m_Children:
   - {fileID: 524881327}
   - {fileID: 460921568}
-  - {fileID: 1522853012}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1362081808
@@ -3918,12 +3921,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522853011}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1354475195}
+  m_Father: {fileID: 460921568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1522853013
 SphereCollider:
