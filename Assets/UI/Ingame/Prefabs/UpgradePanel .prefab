@@ -602,6 +602,7 @@ GameObject:
   - component: {fileID: 659008203374822733}
   - component: {fileID: 4301271752215321585}
   - component: {fileID: 4184629291371668425}
+  - component: {fileID: 715442746146852938}
   m_Layer: 5
   m_Name: 'UpgradePanel '
   m_TagString: Untagged
@@ -667,6 +668,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &715442746146852938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4911921287247968158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87e18f81355fef4694dbc2fd9d0a91f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7933715628300504757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,6 +1148,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162260298725733859, guid: 8f5cf9a64c73dc14c81b664607a15079,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162260298725733859, guid: 8f5cf9a64c73dc14c81b664607a15079,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162260298725733859, guid: 8f5cf9a64c73dc14c81b664607a15079,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 715442746146852938}
+    - target: {fileID: 7162260298725733859, guid: 8f5cf9a64c73dc14c81b664607a15079,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162260298725733859, guid: 8f5cf9a64c73dc14c81b664607a15079,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162260298725733859, guid: 8f5cf9a64c73dc14c81b664607a15079,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradePanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162260298725733859, guid: 8f5cf9a64c73dc14c81b664607a15079,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

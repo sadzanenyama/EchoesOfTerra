@@ -8,4 +8,11 @@ public class LevelSelectPage : MonoBehaviour
     {
         UIManager.UIManagerInstance.SetMainMenuPage();
     }
+
+    public void StartLevelOne()
+    {
+        UIManager.UIManagerInstance.ShowUpgradePanel();
+    }
+
+
 }

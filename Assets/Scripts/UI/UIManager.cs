@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _settingsPage;
     [SerializeField] private GameObject _creditsPage;
     [SerializeField] private GameObject _levelSelectionPage;
+    [SerializeField] private GameObject _upgradePanel;
     [SerializeField] private Transform _screensParent;
 
     [Tooltip("FPS")]
@@ -42,10 +44,30 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ShowGameCoverThenFadeOut());
+        
+        string startScreen = PlayerPrefs.GetString("StartScreen", "MainMenu");
+
+       
+        if (startScreen == "SettingsPage")
+        {
+            SetAsActiveScreen(_settingsPage);
+        }
+        else if (startScreen == "CreditsPage")
+        {
+            SetAsActiveScreen(_creditsPage);
+        }
+        else if (startScreen == "LevelSelectionPage")
+        {
+            SetAsActiveScreen(_levelSelectionPage);
+        }
+        else
+        {
+            PlayerPrefs.DeleteAll(); 
+            StartCoroutine(ShowGameCoverThenFadeOut());
+        }
     }
 
-   
+
     private IEnumerator ShowGameCoverThenFadeOut()
     {
   
@@ -95,17 +117,31 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetAsActiveScreen(GameObject screenToActivate)
+    public void SetAsActiveScreen(GameObject screenToActivate, bool deactivateOthers = true)
     {
-        foreach (Transform screen in _screensParent)
+        if (deactivateOthers)
         {
-            screen.gameObject.SetActive(false);
+           
+            foreach (Transform screen in _screensParent)
+            {
+                screen.gameObject.SetActive(false);
+            }
         }
 
         if (screenToActivate != null)
         {
             screenToActivate.SetActive(true);
-            screenToActivate.transform.SetAsLastSibling();
+            screenToActivate.transform.SetAsLastSibling();  // Ensure the active screen is on top if necessary
         }
+    }
+
+    public void ShowUpgradePanel()
+    {
+        SetAsActiveScreen(_upgradePanel,false);
+    }
+
+    public void StartLevelOne()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

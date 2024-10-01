@@ -551,6 +551,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Four A
       objectReference: {fileID: 0}
+    - target: {fileID: 3440892216897746270, guid: b308705155cf7d74c9af66f87ffc07e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5182359693709997379, guid: b308705155cf7d74c9af66f87ffc07e7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -910,6 +915,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Four B
       objectReference: {fileID: 0}
+    - target: {fileID: 3440892216897746270, guid: b308705155cf7d74c9af66f87ffc07e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5182359693709997379, guid: b308705155cf7d74c9af66f87ffc07e7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1074,6 +1084,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level One
       objectReference: {fileID: 0}
+    - target: {fileID: 4075530578699933536, guid: b308705155cf7d74c9af66f87ffc07e7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1796469534224287540}
     - target: {fileID: 5182359693709997379, guid: b308705155cf7d74c9af66f87ffc07e7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1103,6 +1118,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182359693709997379, guid: b308705155cf7d74c9af66f87ffc07e7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 254
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182359693709997379, guid: b308705155cf7d74c9af66f87ffc07e7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5182359693709997379, guid: b308705155cf7d74c9af66f87ffc07e7,
         type: 3}
@@ -1193,6 +1218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level Three
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440892216897746270, guid: b308705155cf7d74c9af66f87ffc07e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5182359693709997379, guid: b308705155cf7d74c9af66f87ffc07e7,
         type: 3}
@@ -1354,6 +1384,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level Two
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440892216897746270, guid: b308705155cf7d74c9af66f87ffc07e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5182359693709997379, guid: b308705155cf7d74c9af66f87ffc07e7,
         type: 3}
