@@ -31,9 +31,9 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<SpaceShipManager>())
+        if (collision.transform.root.gameObject.GetComponent<SpaceShipManager>())
         {
-            collision.gameObject.GetComponent<SpaceShipManager>().TakeDamage(damage);
+            collision.transform.root.gameObject.GetComponent<SpaceShipManager>().TakeDamage(damage);
             GameObject hitEffect = ObjectPooler.Singleton.GetPooledObjectByTag("HitEffect");
             hitEffect.SetActive(true);
             hitEffect.transform.position = collision.GetContact(0).point;

@@ -10,11 +10,23 @@ public class WaveSpawner : MonoBehaviour
     public WaveMasterSO waveData;
 
     [SerializeField] private int waveNumber;
-    [SerializeField] private int groupNumber;
 
     private float searchCountdown = 1f;
+    [SerializeField] private Transform spawnPointParent;
 
-    public Transform[] spawnPoints;
+    private Transform[] spawnPoints;
+
+    private void Start()
+    {
+        spawnPoints = new Transform[spawnPointParent.childCount];
+
+        for(int i = 0; i < spawnPoints.Length; i++)
+        {
+            spawnPoints[i] = spawnPointParent.GetChild(i).transform;
+        }
+
+        WaveStart();
+    }
 
     private void Update()
     {
@@ -36,13 +48,17 @@ public class WaveSpawner : MonoBehaviour
 
     void WaveCompleted()
     {
-        //Insert event here
+        state = SpawnState.BetweenWave;
+        if (waveNumber >= waveData.waves.Length)
+        {
+            Debug.Log("Finished level");
+            return;
+        }
     }
 
     public void WaveStart()
     {
         waveNumber++;
-
         StartCoroutine(SpawnWave(waveData.waves[waveNumber]));
     }
 
@@ -77,7 +93,7 @@ public class WaveSpawner : MonoBehaviour
         {
             for (int i = 0; i < wave.groups[i2].numToSpawn; i++)
             {
-                SpawnEnemy(wave.groups[i2].enemyToSpawn, wave);
+                SpawnEnemy(wave.groups[i2].enemyToSpawn, wave, i2);
                 yield return new WaitForSeconds(1f / wave.groups[i2].spawnRate);
             }
 
@@ -87,7 +103,7 @@ public class WaveSpawner : MonoBehaviour
         state = SpawnState.Waiting;
     }
 
-    void SpawnEnemy(GameObject _enemy, WaveSO wave)
+    void SpawnEnemy(GameObject _enemy, WaveSO wave, int groupNumber)
     {
         GameObject currentEnemy = ObjectPooler.Singleton.GetPooledObjectByTag(_enemy.tag);
         currentEnemy.transform.position = GetSpawnPosition(wave.groups[groupNumber].spawnPosition);
@@ -97,26 +113,6 @@ public class WaveSpawner : MonoBehaviour
 
     public Vector3 GetSpawnPosition(WaveGroup.SpawnPositions spawn)
     {
-        switch (spawn)
-        {
-            case WaveGroup.SpawnPositions.North:
-                return spawnPoints[0].position;
-            case WaveGroup.SpawnPositions.NorthEast:
-                return spawnPoints[1].position;
-            case WaveGroup.SpawnPositions.East:
-                return spawnPoints[2].position;
-            case WaveGroup.SpawnPositions.SouthEast:
-                return spawnPoints[3].position;
-            case WaveGroup.SpawnPositions.South:
-                return spawnPoints[4].position;
-            case WaveGroup.SpawnPositions.SouthWest:
-                return spawnPoints[5].position;
-            case WaveGroup.SpawnPositions.West:
-                return spawnPoints[6].position;
-            case WaveGroup.SpawnPositions.NorthWest:
-                return spawnPoints[7].position;
-            default:
-                return Vector3.zero; // Fallback in case no direction is matched
-        }
+        return spawnPoints[(int)spawn].position;
     }
 }

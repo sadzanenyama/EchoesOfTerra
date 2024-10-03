@@ -13,19 +13,15 @@ MonoBehaviour:
   m_Name: Wave01
   m_EditorClassIdentifier: 
   groups:
-  - enemyToSpawn: {fileID: 0}
-    spawnRate: 0
-    numToSpawn: 0
+  - enemyToSpawn: {fileID: 8175491573009077134, guid: f4ed6b36c8e0ab04699017fe77052b0f,
+      type: 3}
+    spawnRate: 1
+    numToSpawn: 5
+    delayToNextGroup: 1
     spawnPosition: 0
-  - enemyToSpawn: {fileID: 0}
-    spawnRate: 0
-    numToSpawn: 0
-    spawnPosition: 0
-  - enemyToSpawn: {fileID: 0}
-    spawnRate: 0
-    numToSpawn: 0
-    spawnPosition: 0
-  - enemyToSpawn: {fileID: 0}
-    spawnRate: 0
-    numToSpawn: 0
-    spawnPosition: 0
+  - enemyToSpawn: {fileID: 8175491573009077134, guid: f4ed6b36c8e0ab04699017fe77052b0f,
+      type: 3}
+    spawnRate: 5
+    numToSpawn: 5
+    delayToNextGroup: 1
+    spawnPosition: 4

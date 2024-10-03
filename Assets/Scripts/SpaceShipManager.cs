@@ -35,7 +35,7 @@ public class SpaceShipManager : MonoBehaviour
 
         if (currentHealth < 0)
         {
-            Debug.Log("Die");
+            gameObject.SetActive(false);
         }
 
         OnTakeDamage?.Invoke();
