@@ -18,8 +18,12 @@ public class WeaponManager : MonoBehaviour
     public delegate void ShootAction();
     public event ShootAction OnShoot;
 
+    private AudioSource audioSource;
+
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+
         if (Instance == null)
         {
             Instance = this;  // Set the static reference to this instance
@@ -71,6 +75,7 @@ public class WeaponManager : MonoBehaviour
 
         timeTilNextShot = 1f;
         currentHeat += weaponStats.heatPerShot;
+        audioSource.PlayOneShot(weaponStats.shootSound, 0.3f);
         OnShoot?.Invoke();
     }
 }

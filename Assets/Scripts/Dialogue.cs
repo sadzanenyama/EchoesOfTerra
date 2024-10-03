@@ -4,22 +4,36 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
+    public GameObject ingameUI;
+    public GameObject DialogueUI;
     public GameObject mainMessage;
     public GameObject sideMessage;
     public Button continueButton;
     public float typeDelay = 0.1f;  // Delay between each letter
 
-    private string[] lvlOnePreMessage;
+    [TextArea(3,5)]
+    public string[] lvlOnePreMessage;
+    [TextArea(3, 5)]
+    public string[] lvlOnePostMessage;
+    [TextArea(3, 5)]
+    public string[] lvlTwoPreMessage;
+    [TextArea(3, 5)]
+    public string[] lvlTwoPostMessage;
+    [TextArea(3, 5)]
+    public string[] lvlThreeAPreMessage;
+    [TextArea(3, 5)]
+    public string[] lvlThreeAPostMessage;
+    [TextArea(3, 5)]
+    public string[] lvlThreeBPreMessage;
+    [TextArea(3, 5)]
+    public string[] lvlThreeBPostMessage;
+
     public string[] messages;
     private int currentMessageIndex; //tracks which sentence is currently displayed
     private void Start()
     {
+        ingameUI.SetActive(false);
         continueButton.onClick.AddListener(ShowNextMessage);
-        lvlOnePreMessage = new string[] {
-        "I hope you enjoyed your space leave, but I have to say I’m happy you’re back.", 
-        "We’ve been getting reports of attacks on this mining colony—probably pirates.",
-        "Just keep an eye out for any suspicious ships."
-        };
         messages = lvlOnePreMessage;
         currentMessageIndex = 0;
 
@@ -51,6 +65,8 @@ public class Dialogue : MonoBehaviour
         {
             // All sentences have been shown, handle what happens next (e.g., start a new scene, etc.)
             Debug.Log("All messages displayed");
+            ingameUI.SetActive(true);
+            DialogueUI.SetActive(false);
         }
     }
  
