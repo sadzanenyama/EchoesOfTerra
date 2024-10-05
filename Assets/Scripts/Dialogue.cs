@@ -13,22 +13,30 @@ public class Dialogue : MonoBehaviour
 
     [TextArea(3,5)]
     public string[] lvlOnePreMessage;
-    [TextArea(3, 5)]
-    public string[] lvlOnePostMessage;
+   // [TextArea(3, 5)]
+  //  public string[] lvlOnePostMessage;
     [TextArea(3, 5)]
     public string[] lvlTwoPreMessage;
+  //  [TextArea(3, 5)]
+   // public string[] lvlTwoPostMessage;
     [TextArea(3, 5)]
-    public string[] lvlTwoPostMessage;
+    public string[] lvlThreePreMessage;
     [TextArea(3, 5)]
-    public string[] lvlThreeAPreMessage;
+    public string[] lvlThreePostMessage;
     [TextArea(3, 5)]
-    public string[] lvlThreeAPostMessage;
+    public string[] lvlFourAPreMessage;
     [TextArea(3, 5)]
-    public string[] lvlThreeBPreMessage;
+    public string[] lvlFourAPostMessage;
     [TextArea(3, 5)]
-    public string[] lvlThreeBPostMessage;
+    public string[] lvlFourBPreMessage;
+    [TextArea(3, 5)]
+    public string[] lvlFourBPostMessage;
 
+    [TextArea(3, 5)]
     public string[] messages;
+
+    [TextArea(3, 5)]
+    public string[] diaryEntries;
     private int currentMessageIndex; //tracks which sentence is currently displayed
     private void Start()
     {

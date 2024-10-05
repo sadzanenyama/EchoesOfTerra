@@ -1172,6 +1172,11 @@ PrefabInstance:
     - target: {fileID: 224723853750418696, guid: b54c40704cf01e74bbd8dd958872f2b6,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805593952140919814, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7483500960975510992, guid: b54c40704cf01e74bbd8dd958872f2b6,
@@ -1234,6 +1239,264 @@ PrefabInstance:
       propertyPath: sideMessage
       value: 
       objectReference: {fileID: 757367505}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: messages.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: messages.Array.data[0]
+      value: "It\u2019s getting worse. This isn\u2019t just a pirate attack\u2014they
+        just bombed the Iron Home colony!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: messages.Array.data[1]
+      value: "This is a full scale invasion. There\u2019s hundreds of ships\u2026
+        where the hell are they all coming from?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: messages.Array.data[2]
+      value: You left us. Abandoned us! We just wanted a home, the same as you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: messages.Array.data[3]
+      value: "You don\u2019t know what you\u2019re doing."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: messages.Array.data[4]
+      value: "Hang on. I found something, some kind of project they were doing on
+        this planet\u2026 keep doing what you\u2019re doing. I\u2019ll contact you
+        again when I have more details"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: messages.Array.data[5]
+      value: "You\u2019re all the same, but we\u2019re not gonna die lying down."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: diaryEntries.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: diaryEntries.Array.data[0]
+      value: "We\u2019re finally here\u2026 in a couple of days, I\u2019ll be off
+        this damn ship and breathing fresh air for the first time. I can\u2019t wait"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlTwoPreMessage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourAPreMessage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourBPreMessage.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreePreMessage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourAPostMessage.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourBPostMessage.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreeAPreMessage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreePostMessage.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlTwoPreMessage.Array.data[0]
+      value: "They just hit one of our planets -Artemis-...  it\u2019s gone. Everyone\u2019s
+        dead. God..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlTwoPreMessage.Array.data[1]
+      value: "We got a sizable fleet headed in your direction. Give 'em hell, Admiral.
+        Don\u2019t let them get to Demeter. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlTwoPreMessage.Array.data[2]
+      value: "If we lose it, it won\u2019t matter whether we save the rest or not.
+        This planet feeds billions. We\u2019ll all starve. You have to stop them."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreeAPostMessage.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourAPreMessage.Array.data[0]
+      value: 'I understand, Admiral. I just wish there was another way. Old earth
+        will have to wait. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourAPreMessage.Array.data[1]
+      value: "Our New Home is the most important thing. The enemy is ignoring all
+        hails for communication, but I\u2019ll keep trying. As of now, their entire
+        fleet is on route. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourAPreMessage.Array.data[2]
+      value: This will not be easy. Billions of lives are in your hands.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourBPreMessage.Array.data[0]
+      value: What are you doing? Abandoning us is not good enough? You want to kill
+        us too? Destroy us with your machines? We're not going to let that happen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourBPreMessage.Array.data[1]
+      value: "Damn! They cut us out, Admiral. Idiots don\u2019t realize we\u2019re
+        trying to save them. You\u2019re going to have to fend them off. I\u2019ll
+        keep trying on the communicator. Most of their fleet is on route, this will
+        not be easy. If you pull this off though, we\u2019ll be saving billions\u2026
+        Let's hope New Terra can hold out."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreePreMessage.Array.data[0]
+      value: "I put us on a private channel. Admiral, these are people, I mean\u2026.
+        I think\u2026 I think they\u2019re from old earth. I didn\u2019t know anyone
+        was left."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreePreMessage.Array.data[1]
+      value: 'We still have to stop them. They''re coming for planet Athena. It''s
+        got our terraforming tech. Our ecosystems will collapse without this research. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreePreMessage.Array.data[2]
+      value: "God\u2026 it shouldn\u2019t have come to this."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourAPostMessage.Array.data[0]
+      value: "We just\u2026 we just wanted a home"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourAPostMessage.Array.data[1]
+      value: "You did it! It\u2019s over! I just wish\u2026 I just wish this hadn\u2019t
+        come at such a cost. Old earth\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourBPostMessage.Array.data[0]
+      value: "You.. fixed it? God, you actually did it. I thought wrong of you. I\u2019m\u2026
+        I\u2019m sorry. Pulling back all ships immediately. Thank you. From the depths
+        of old earth I want to thank you"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlFourBPostMessage.Array.data[1]
+      value: "It's done, Old Earth is saved. Our home\u2026 I just wish this hadn\u2019t
+        come at such a cost. New Terra was hit hard."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreeAPreMessage.Array.data[0]
+      value: "\"I put us on a private channel. Admiral, these are people, I mean\u2026.
+        I think\u2026 I think they\u2019re from old earth. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreeAPreMessage.Array.data[1]
+      value: "I didn\u2019t know anyone was left. We still have to stop them. They're
+        coming for planet Athena. It's got our terraforming tech. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreeAPreMessage.Array.data[2]
+      value: "Our ecosystems will collapse without this research. God\u2026 it shouldn\u2019t
+        have come to this."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreePostMessage.Array.data[0]
+      value: "I just got word that old earth is preparing to land on New Terra. This
+        is it. We can\u2019t let them do this\u2026 but, I think we can stop them. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreePostMessage.Array.data[1]
+      value: "I don\u2019t know. A Mag Stabilizer was developed here, not fully complete,
+        but I think it could work. We can restore Old Earth\u2019s magnetic field,
+        fix the damage. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreePostMessage.Array.data[2]
+      value: "We can save them, Admiral, our original home. But New Terra\u2019s
+        defenses will be heavily weakened without you. Our people\u2026 or theirs.
+        God\u2026 I wish it hadn\u2019t come to this. I\u2019ll try to get in contact
+        with them, but they seem to be ignoring any communication hails. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreePostMessage.Array.data[3]
+      value: "No one should have to make this decision, but it\u2019s up to you"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreeAPostMessage.Array.data[0]
+      value: "I just got word that old earth is preparing to land on New Terra. This
+        is it. We can\u2019t let them do this\u2026 but, I think we can stop them. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreeAPostMessage.Array.data[1]
+      value: "I don\u2019t know. A Mag Stabilizer was developed here, not fully complete,
+        but I think it could work. We can restore Old Earth\u2019s magnetic field,
+        fix the damage. We can save them, Admiral, our original home. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreeAPostMessage.Array.data[2]
+      value: "But New Terra\u2019s defenses will be heavily weakened without you.
+        Our people\u2026 or theirs. God\u2026 I wish it hadn\u2019t come to this.
+        I\u2019ll try to get in contact with them, but they seem to be ignoring any
+        communication hails. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600190053599498583, guid: b54c40704cf01e74bbd8dd958872f2b6,
+        type: 3}
+      propertyPath: lvlThreeAPostMessage.Array.data[3]
+      value: "No one should have to make this decision, but it\u2019s up to you"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
