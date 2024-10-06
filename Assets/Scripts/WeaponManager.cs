@@ -26,7 +26,7 @@ public class WeaponManager : MonoBehaviour
 
         if (Instance == null)
         {
-            Instance = this;  // Set the static reference to this instance
+            Instance = this; 
         }
         else
         {

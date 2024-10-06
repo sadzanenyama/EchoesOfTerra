@@ -393,9 +393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94766fe722aff264094561bd683d07ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipStats: {fileID: 11400000, guid: 15551aa19c1e24848a242de6d57d5199, type: 2}
+  shipStats: {fileID: 11400000, guid: 220b70569d5a8b9429f2e4435e3c1638, type: 2}
   currentHealth: 0
   currentShield: 0
+  isDead: 0
 --- !u!114 &1243209974475467470
 MonoBehaviour:
   m_ObjectHideFlags: 0

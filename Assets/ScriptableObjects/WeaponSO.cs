@@ -19,4 +19,6 @@ public class WeaponSO : ScriptableObject
     [Header("Other")]
     public AudioClip shootSound;
 
+
+
 }

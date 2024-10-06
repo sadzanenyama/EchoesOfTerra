@@ -9,7 +9,7 @@ public class SpaceShipManager : MonoBehaviour
     public float currentShield;
 
     private float timeTilShieldRecharge;
-    private bool isDead = false; 
+    public bool isDead = false; 
     public delegate void DamageAction();
     public event DamageAction OnTakeDamage;
 
@@ -41,8 +41,7 @@ public class SpaceShipManager : MonoBehaviour
         if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
-            currentHealth = 0;  
-            IngameUI.Instance.DisplayStatsAndGameOver(); 
+            currentHealth = 0;   
         }
 
         OnTakeDamage?.Invoke();
