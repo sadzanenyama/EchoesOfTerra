@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
-{
-    public static WeaponManager Instance { get; private set; }  // Static reference for global access
-  
+{ 
     [SerializeField] private WeaponSO weaponStats;
     [SerializeField] private Transform bulletSpawn;
 
@@ -23,15 +21,6 @@ public class WeaponManager : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-
-        if (Instance == null)
-        {
-            Instance = this;  // Set the static reference to this instance
-        }
-        else
-        {
-            Debug.LogWarning("Multiple instances of WeaponManager detected!");
-        }
     }
 
     public float GetCurrentHeat()

@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class SpaceShipManager : MonoBehaviour
 {
-    public static SpaceShipManager Instance { get; private set; }
-
     public ShipSO shipStats;
     public float currentHealth;
     public float currentShield;
@@ -15,11 +13,6 @@ public class SpaceShipManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-
         currentHealth = shipStats.hullHealth;
         currentShield = shipStats.shieldHealth;
         timeTilShieldRecharge = 0;
