@@ -40,7 +40,7 @@ public class Dialogue : MonoBehaviour
     private int currentMessageIndex; //tracks which sentence is currently displayed
     private void Start()
     {
-        ingameUI.SetActive(false);
+       // ingameUI.SetActive(false);
         continueButton.onClick.AddListener(ShowNextMessage);
         messages = lvlOnePreMessage;
         currentMessageIndex = 0;
