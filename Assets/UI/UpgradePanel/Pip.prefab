@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 2518661567089752863}
   - component: {fileID: 6704446612989144971}
   - component: {fileID: 4329485187719346056}
+  - component: {fileID: 7987216291206089862}
   m_Layer: 5
   m_Name: Pip
   m_TagString: Untagged
@@ -151,3 +152,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7987216291206089862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6957596167262797368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0658267757ab624eb4418c16bc32da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _active: {fileID: 1338080526504689267}

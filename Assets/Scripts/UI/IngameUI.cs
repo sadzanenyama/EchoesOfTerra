@@ -9,15 +9,16 @@ public class IngameUI : MonoBehaviour
     [SerializeField] private Image _shipHealth;
     [SerializeField] private Image _shieldHealth;
     [SerializeField] private GameObject _gameOverPanel;
-    [SerializeField] private GameObject _statsPanel; 
+    [SerializeField] private GameObject _statsPanel;
+    private SpaceShipManager player;
+    private WeaponManager weaponPlayer;
     public ShipSO shipStats;
 
     private WeaponManager playerWeapon;
     private SpaceShipManager playerShip;
 
+    private int enemiesKilled; 
     public static IngameUI Instance { get; private set; }
-
-    private int _shotsFired = 0;  // Track the shots fired in this variable.
 
     private void Awake()
     {
@@ -29,7 +30,12 @@ public class IngameUI : MonoBehaviour
             Instance = this;
         }
     }
-  
+    public void Start()
+    {
+        player = GameObject.FindWithTag("Player").GetComponent<SpaceShipManager>();
+        weaponPlayer = GameObject.FindWithTag("Player").GetComponent<WeaponManager>();
+
+    }
     public void ResetGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -37,7 +43,7 @@ public class IngameUI : MonoBehaviour
 
     public void MainMenu()
     {
-        PlayerPrefs.SetString("StartScreen", "LevelSelectionPage");  // Example: Go to 'Options' screen instead of the default screen
+        PlayerPrefs.SetString("StartScreen", "LevelSelectionPage");  
         PlayerPrefs.Save();
         SceneManager.LoadScene("Main");
       
@@ -56,8 +62,6 @@ public class IngameUI : MonoBehaviour
     public void DisplayStatsAndGameOver()
     {
         _statsPanel.SetActive(true);
-
-       // show stats data 
         StartCoroutine(ShowGameOver());
     }
 
