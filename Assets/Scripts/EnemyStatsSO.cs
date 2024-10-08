@@ -16,6 +16,7 @@ public class EnemyStatsSO : ScriptableObject
     public float fuseTime;
     public float maxExplosionDamage;
     public float damageFallOff;
+    public AudioClip deadMelee; 
 
     [Header("Health Stats")]
     public ShipSO shipStats;

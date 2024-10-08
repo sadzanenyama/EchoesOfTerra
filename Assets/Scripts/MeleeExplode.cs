@@ -10,12 +10,14 @@ public class MeleeExplode : MonoBehaviour
 
     private float distanceToPlayer;
     private Transform player;
+    private AudioSource audioSource; 
 
     private bool explode;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -47,6 +49,7 @@ public class MeleeExplode : MonoBehaviour
         yield return new WaitForSeconds(enemyStats.fuseTime);
         GameObject explosion = ObjectPooler.Singleton.GetPooledObjectByTag("Explosion");
         explosion.GetComponent<ExplosionDamage>().Explode(explosionPosition.position);
+        audioSource.PlayOneShot(enemyStats.deadMelee,1f);
         gameObject.SetActive(false);
     }
 }
