@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpaceShipManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class SpaceShipManager : MonoBehaviour
     public bool isDead = false; 
     public delegate void DamageAction();
     public event DamageAction OnTakeDamage;
+    public AudioSource audioSource; 
 
     private void Awake()
     {
@@ -18,6 +20,11 @@ public class SpaceShipManager : MonoBehaviour
         timeTilShieldRecharge = 0;
     }
 
+
+    public void Start()
+    {
+          
+    }
     public void TakeDamage(float damage)
     {
         if (currentShield > 0)
