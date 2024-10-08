@@ -14,7 +14,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _levelSelectionPage;
     [SerializeField] private GameObject _upgradePanel;
     [SerializeField] private Transform _screensParent;
-
     [Tooltip("FPS")]
     [SerializeField] private GameObject _fpsMarker; 
     public static UIManager UIManagerInstance { get; private set; }
@@ -65,6 +64,7 @@ public class UIManager : MonoBehaviour
             PlayerPrefs.DeleteAll(); 
             StartCoroutine(ShowGameCoverThenFadeOut());
         }
+        AudioManager.instance.PlayMusic("SpaceSounds");
     }
 
   

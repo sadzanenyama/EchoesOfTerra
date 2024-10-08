@@ -877,26 +877,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3191370046464862149, guid: fbbd86ce7829e36439fecb01d3a0f791,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191370046464862149, guid: fbbd86ce7829e36439fecb01d3a0f791,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191370046464862149, guid: fbbd86ce7829e36439fecb01d3a0f791,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191370046464862149, guid: fbbd86ce7829e36439fecb01d3a0f791,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3797451162258914056, guid: fbbd86ce7829e36439fecb01d3a0f791,
         type: 3}
       propertyPath: m_Name
@@ -911,21 +891,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4046989031950909483, guid: fbbd86ce7829e36439fecb01d3a0f791,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 4046989031950909483, guid: fbbd86ce7829e36439fecb01d3a0f791,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.19999695
-      objectReference: {fileID: 0}
-    - target: {fileID: 4046989031950909483, guid: fbbd86ce7829e36439fecb01d3a0f791,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -17.199997
       objectReference: {fileID: 0}
     - target: {fileID: 4377608119438985315, guid: fbbd86ce7829e36439fecb01d3a0f791,
         type: 3}
@@ -947,11 +912,6 @@ PrefabInstance:
       propertyPath: _gunHeat
       value: 
       objectReference: {fileID: 1389410329}
-    - target: {fileID: 8826275996084981994, guid: fbbd86ce7829e36439fecb01d3a0f791,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5199805498164112510, guid: fbbd86ce7829e36439fecb01d3a0f791, type: 3}
