@@ -36,6 +36,12 @@ public class IngameUI : MonoBehaviour
         weaponPlayer = GameObject.FindWithTag("Player").GetComponent<WeaponManager>();
 
     }
+
+
+    public void OnEnable()
+    {
+        AudioManager.instance.PlayMusic("SpaceSounds");
+    }
     public void ResetGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

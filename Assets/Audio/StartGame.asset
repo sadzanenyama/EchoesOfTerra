@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d39e63da0e34b949b6210446fd1917c, type: 3}
-  m_Name: Ingame menu music
+  m_Name: StartGame
   m_EditorClassIdentifier: 
-  nameOfSound: SpaceSounds
-  soundClip: {fileID: 8300000, guid: 52071e7db469572498d2e34970c97686, type: 3}
+  nameOfSound: StartGame
+  soundClip: {fileID: 8300000, guid: 07eb9b15a10f72548b538bae1e5536ac, type: 3}
