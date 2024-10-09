@@ -1193,6 +1193,7 @@ MonoBehaviour:
   _shieldHealth: {fileID: 2016144061311926077}
   _gameOverPanel: {fileID: 4432490164639742783}
   _statsPanel: {fileID: 3771818774130802940}
+  _planetPopulationText: {fileID: 4651874045155807254}
   shipStats: {fileID: 11400000, guid: 15551aa19c1e24848a242de6d57d5199, type: 2}
 --- !u!1 &4425359876376682042
 GameObject:

@@ -16,7 +16,15 @@ public class EnemyStatsSO : ScriptableObject
     public float fuseTime;
     public float maxExplosionDamage;
     public float damageFallOff;
-    public AudioClip deadMelee; 
+    public AudioClip deadMelee;
+
+
+    [Header("Trooper")]
+    public float explodeDistanceTrooper;
+    public float fuseTimeTrooper;
+    public float damageFallOffTrooper;
+    public int planetDamage; 
+    public AudioClip deadTrooper;
 
     [Header("Health Stats")]
     public ShipSO shipStats;
