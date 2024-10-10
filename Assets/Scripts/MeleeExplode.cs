@@ -45,11 +45,10 @@ public class MeleeExplode : MonoBehaviour
     }
 
     IEnumerator Explode()
-    {
-        yield return new WaitForSeconds(enemyStats.fuseTime);
+    {        yield return new WaitForSeconds(enemyStats.fuseTime);
         GameObject explosion = ObjectPooler.Singleton.GetPooledObjectByTag("Explosion");
         explosion.GetComponent<ExplosionDamage>().Explode(explosionPosition.position);
-        audioSource.PlayOneShot(enemyStats.deadMelee,1f);
+        audioSource.PlayOneShot(enemyStats.deadMelee,2f);
         gameObject.SetActive(false);
     }
 }

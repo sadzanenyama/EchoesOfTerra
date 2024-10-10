@@ -6,6 +6,7 @@ public class CreditsPage : MonoBehaviour
 {
     public void Back()
     {
+        AudioManager.instance.PlayAudioSFX("ButtonClick"); 
         UIManager.UIManagerInstance.SetMainMenuPage();
     }
 }

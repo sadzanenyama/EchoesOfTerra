@@ -16,7 +16,7 @@ public class WaveSpawner : MonoBehaviour
 
     private Transform[] spawnPoints;
 
-    private void Start()
+    protected virtual void Start()
     {
         spawnPoints = new Transform[spawnPointParent.childCount];
 

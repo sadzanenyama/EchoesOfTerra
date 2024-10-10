@@ -25,10 +25,7 @@ public class AudioManager : MonoBehaviour
 ;
         }
     }
-    public void Start()
-    {
-        PlayMusic("test");
-    }
+
     public void PlayMusic(string name)
     {
         Sound sound = Array.Find(musicSounds, soundItem => soundItem.nameOfSound == name);
@@ -45,7 +42,7 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayAudioSFX(string name)
     {
-        Sound sound = Array.Find(musicSounds, soundItem => soundItem.nameOfSound == name);
+        Sound sound = Array.Find(audioSounds, soundItem => soundItem.nameOfSound == name);
         if (sound == null)
         {
             Debug.Log("Sound not found");

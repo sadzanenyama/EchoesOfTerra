@@ -31,6 +31,7 @@ public class UpgradePanel : MonoBehaviour
     {
         if (!CheckPips(_weaponIndexPips))
         {
+            AudioManager.instance.PlayAudioSFX("Pip");
             _weaponIndexPips++;
             _weaponSystem.SetPipsActive(_weaponIndexPips);
             playerXPPoints -= 1;
@@ -47,6 +48,7 @@ public class UpgradePanel : MonoBehaviour
     {
         if (!CheckPips(_engineIndexPips))
         {
+            AudioManager.instance.PlayAudioSFX("Pip");
             _engineIndexPips++;
             _engineSystem.SetPipsActive(_engineIndexPips);
             playerXPPoints -= 1;
@@ -62,6 +64,7 @@ public class UpgradePanel : MonoBehaviour
     {
         if (!CheckPips(_shipIndexPips))
         {
+            AudioManager.instance.PlayAudioSFX("Pip");
             _shipIndexPips++;
             _shieldSystem.SetPipsActive(_shipIndexPips);
             playerXPPoints -= 1;
@@ -91,6 +94,7 @@ public class UpgradePanel : MonoBehaviour
     }
     public void StartGame()
     {
+        AudioManager.instance.PlayAudioSFX("StartGame");
         UIManager.UIManagerInstance.StartLevelOne(); 
     }
 }

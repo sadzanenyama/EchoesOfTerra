@@ -20,5 +20,10 @@ public class WeaponSO : ScriptableObject
     public AudioClip shootSound;
 
 
+    [Header("Upgraded stats")]
+    private float projectileSpeedUpgraded;
+    private float fireRateUpgraded;
+    private float accuracyUpgraded;
+    private float damageUpgraded;
 
 }
