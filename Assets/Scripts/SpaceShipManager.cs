@@ -11,7 +11,6 @@ public class SpaceShipManager : MonoBehaviour
     public bool isDead = false; 
     public delegate void DamageAction();
     public event DamageAction OnTakeDamage;
-    public AudioSource audioSource; 
 
     private void Awake()
     {

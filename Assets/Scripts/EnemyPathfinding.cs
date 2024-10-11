@@ -6,13 +6,16 @@ using UnityEngine.AI;
 public class EnemyPathfinding : MonoBehaviour
 {
     private NavMeshAgent agent;
-    private Transform player;
+    private Transform target;
 
     public EnemyStatsSO enemyStats;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (enemyStats.name != "Trooper")
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        else
+            target = GameObject.FindGameObjectWithTag("Planet").transform;
 
         agent = GetComponent<NavMeshAgent>();
 
@@ -27,6 +30,6 @@ public class EnemyPathfinding : MonoBehaviour
     void Update()
     {
         if(agent.enabled)
-            agent.SetDestination(player.position);
+            agent.SetDestination(target.position);
     }
 }

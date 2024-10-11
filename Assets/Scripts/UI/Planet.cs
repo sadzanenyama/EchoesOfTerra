@@ -6,9 +6,9 @@ public class Planet : MonoBehaviour
 {
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name == "Trooper")
+        if (collision.collider.transform.root.CompareTag("Trooper"))
         {
-            int planetDamage = collision.gameObject.GetComponent<EnemyStatsSO>().planetDamage;
+            int planetDamage = collision.collider.transform.root.GetComponent<EnemyPathfinding>().enemyStats.planetDamage;
             // destroy trooper 
             IngameUI.Instance.ReducePopulation(planetDamage);
             //Destroy(collision.gameObject);

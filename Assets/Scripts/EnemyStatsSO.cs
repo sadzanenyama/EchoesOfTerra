@@ -24,9 +24,6 @@ public class EnemyStatsSO : ScriptableObject
     public WeaponSO enemyWeapon;
 
     [Header("Trooper")]
-    public float explodeDistanceTrooper;
-    public float fuseTimeTrooper;
-    public float damageFallOffTrooper;
     public int planetDamage; 
     public AudioClip deadTrooper;
 

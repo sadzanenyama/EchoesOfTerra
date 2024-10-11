@@ -151,10 +151,9 @@ GameObject:
   - component: {fileID: 7579195676254212057}
   - component: {fileID: 2668255515109584906}
   - component: {fileID: 7826545524296626903}
-  - component: {fileID: -2231058559718963641}
   m_Layer: 7
   m_Name: MeleeEnemy
-  m_TagString: Enemy
+  m_TagString: Melee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,20 +337,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-2231058559718963641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8175491573009077134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b36c0a6be03f841a6c5f3daf817fbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponStats: {fileID: 0}
-  bulletSpawn: {fileID: 0}
-  timeTilNextShot: 0
-  currentHeat: 0
-  overheated: 0
