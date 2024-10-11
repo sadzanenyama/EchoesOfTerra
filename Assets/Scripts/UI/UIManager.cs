@@ -59,6 +59,10 @@ public class UIManager : MonoBehaviour
         {
             SetAsActiveScreen(_levelSelectionPage);
         }
+        else if (startScreen == "TutorialPage")
+        {
+            SetAsActiveScreen(_mainMenuScreen);
+        }
         else
         {
             PlayerPrefs.DeleteAll(); 

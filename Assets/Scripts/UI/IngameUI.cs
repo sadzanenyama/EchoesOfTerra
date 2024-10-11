@@ -67,7 +67,7 @@ public class IngameUI : MonoBehaviour
     {
         float heat = playerWeapon.GetCurrentHeat();
         float maxHeat = playerWeapon.GetMaxHeat();
-        _gunHeat.fillAmount = heat / maxHeat;
+        _gunHeat.fillAmount = 1-(heat / maxHeat);
         _shieldHealth.fillAmount = playerShip.GetCurrentShield() / playerShip.shipStats.shieldHealth;
         _shipHealth.fillAmount = playerShip.GetCurrentHealth() / playerShip.shipStats.hullHealth;
     }
