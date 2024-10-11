@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class MainMenu : MonoBehaviour
     {
         AudioManager.instance.PlayAudioSFX("ButtonClick");
         UIManager.UIManagerInstance.SetSettingsPage();
+    }
+
+    public void Tutorial()
+    {
+        AudioManager.instance.PlayAudioSFX("ButtonClick");
+        PlayerPrefs.SetString("StartScreen", "TutorialPage");
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(2);
     }
 
     public void CreditsPage()

@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
     public GameObject[] uipopupPanel;
     public GameObject[] playerMovementPopUp;
 
+    [SerializeField] private WaveSpawner _waveSpawner;
+    [SerializeField] private GameObject _gameOver; 
     private int currentIndexInGame = 0;
     private int currentIndexPlayerMovement = 0;
-
     private bool inplayUIComplete = false;
     private bool inplayPlayerMovementUIComplete = false;
+    private bool enemyWaveStarted= false; 
 
     public void Start()
     {
@@ -42,8 +46,22 @@ public class TutorialManager : MonoBehaviour
                 UpdatePlayerMovement();
             }
         }
+        if (enemyWaveStarted)
+        {
+            GameObject enemies = GameObject.FindGameObjectWithTag("Enemy"); 
+            if(enemies == null) 
+            {
+                _gameOver.gameObject.SetActive(true);
+            }
+
+        }
     }
 
+
+    public void QuitTutorial()
+    {
+        SceneManager.LoadScene("Main");
+    }
 
     public void ShowCurrentUIPanel()
     {
@@ -98,9 +116,12 @@ public class TutorialManager : MonoBehaviour
    
     private IEnumerator EndPlayerMovementSequence()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         DeactivateAllPlayerUI();
         inplayPlayerMovementUIComplete = true;
+        // call player
+        _waveSpawner.WaveStart();
+        enemyWaveStarted = true; 
     }
 
 

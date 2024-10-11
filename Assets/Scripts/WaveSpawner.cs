@@ -6,15 +6,15 @@ public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState { Spawning, Waiting, BetweenWave};
     public SpawnState state = SpawnState.BetweenWave;
+    [SerializeField] private bool onStartWave; 
+    [SerializeField] protected WaveMasterSO waveData;
 
-    public WaveMasterSO waveData;
+    [SerializeField] protected int waveNumber;
 
-    [SerializeField] private int waveNumber;
+    protected float searchCountdown = 1f;
+    [SerializeField] protected Transform spawnPointParent;
 
-    private float searchCountdown = 1f;
-    [SerializeField] private Transform spawnPointParent;
-
-    private Transform[] spawnPoints;
+    protected Transform[] spawnPoints;
 
     protected virtual void Start()
     {
@@ -24,8 +24,11 @@ public class WaveSpawner : MonoBehaviour
         {
             spawnPoints[i] = spawnPointParent.GetChild(i).transform;
         }
-
-        WaveStart();
+        if (onStartWave)
+        {
+            WaveStart();
+        }
+ 
     }
 
     private void Update()
