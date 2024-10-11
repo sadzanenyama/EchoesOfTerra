@@ -1802,6 +1802,7 @@ MonoBehaviour:
   typeDelay: 0.1
   waitTimeBetweenMessages: 1
   SceneOne:
+  - '   '
   - 'Many centuries ago, the sun''s intense radiation overwhelmed Earth''s deteriorating
     ozone layer. '
   - This caused the planet's magnetic field to weaken beyond repair, leaving humanity
@@ -1809,7 +1810,8 @@ MonoBehaviour:
   - So we had to abandon our home, and escape to the stars...
   - After years of searching...
   - And a couple more years... we found a new home
-  - '"NEW TERRA", and here we thrived.        '
+  - '"NEW TERRA"    '
+  - 'And here we thrived.    '
   - Now, as admiral it is your sworn duty to protect the planet and humanity
 --- !u!4 &1542922418
 Transform:
@@ -1987,7 +1989,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c6916212459adc84cac8a7bbb0d8ac70, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d44f9b0b18ad9d1408c2fc28737c9cbc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

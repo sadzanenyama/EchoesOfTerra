@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Threading;
 
 public class CutsceneDialogue : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class CutsceneDialogue : MonoBehaviour
     private void Start()
     {
         currentMessageIndex = 0;
-        new WaitForSeconds(5);
+        //Thread.Sleep(300);
         StartCoroutine(ShowNextMessage());
     }
 
