@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b38fe751d39359438b3e179c284aed4, type: 3}
-  m_Name: PlayerWeapon
+  m_Name: EnemyWeapon
   m_EditorClassIdentifier: 
-  projectileSpeed: 35
-  fireRate: 2
-  accuracy: 5
+  projectileSpeed: 25
+  fireRate: 3
+  accuracy: 15
   damage: 25
-  heatPerShot: 5
-  coolRate: 25
-  shootSound: {fileID: 8300000, guid: 8ab2170bd3740284799211eb56a69e49, type: 3}
-  overheatSound: {fileID: 8300000, guid: a0b31d4600635d244b75d100d693c255, type: 3}
+  heatPerShot: 0
+  coolRate: 0
+  shootSound: {fileID: 8300000, guid: 4bfdb39ba64137948bdbe535482c1623, type: 3}
+  overheatSound: {fileID: 0}

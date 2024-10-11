@@ -10,6 +10,7 @@ public class EnemyStatsSO : ScriptableObject
     public float speedVariation;
     public float turningSpeed;
     public float acceleration;
+    public float stoppingDistance;
 
     [Header("Melee")]
     public float explodeDistance;
@@ -18,6 +19,9 @@ public class EnemyStatsSO : ScriptableObject
     public float damageFallOff;
     public AudioClip deadMelee;
 
+    [Header("Ranged")]
+    public float shootDistance;
+    public WeaponSO enemyWeapon;
 
     [Header("Trooper")]
     public float explodeDistanceTrooper;

@@ -6,12 +6,13 @@ using TMPro;
 
 public class IngameUI : MonoBehaviour
 {
-    [SerializeField] private Image _gunHeat;
     [SerializeField] private Image _shipHealth;
     [SerializeField] private Image _shieldHealth;
     [SerializeField] private GameObject _gameOverPanel;
     [SerializeField] private GameObject _statsPanel;
     [SerializeField] TextMeshProUGUI _planetPopulationText;
+    [SerializeField] private GameObject overheatText;
+
     private SpaceShipManager player;
     private WeaponManager weaponPlayer;
     public ShipSO shipStats;
@@ -19,11 +20,24 @@ public class IngameUI : MonoBehaviour
     private WeaponManager playerWeapon;
     private SpaceShipManager playerShip;
 
-    private int enemiesKilled; 
+    private int enemiesKilled;
+
     public static IngameUI Instance { get; private set; }
+
+    [SerializeField] private RectTransform _gunHeat;
+    [SerializeField] private Color normalColor;
+    [SerializeField] private Color heatColor;
+    private Image gunHeatBar;
+    float heatBarHeight;
+    float heatBarWidth;
 
     private void Awake()
     {
+        heatBarHeight = _gunHeat.GetComponent<RectTransform>().sizeDelta.y;
+        heatBarWidth = _gunHeat.GetComponent<RectTransform>().sizeDelta.x;
+
+        gunHeatBar = _gunHeat.GetComponent<Image>();
+
         playerWeapon = GameObject.FindWithTag("Player").GetComponent<WeaponManager>();
         playerShip = GameObject.FindWithTag("Player").GetComponent<SpaceShipManager>();
 
@@ -36,7 +50,6 @@ public class IngameUI : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<SpaceShipManager>();
         weaponPlayer = GameObject.FindWithTag("Player").GetComponent<WeaponManager>();
-
     }
 
 
@@ -67,9 +80,14 @@ public class IngameUI : MonoBehaviour
     {
         float heat = playerWeapon.GetCurrentHeat();
         float maxHeat = playerWeapon.GetMaxHeat();
-        _gunHeat.fillAmount = heat / maxHeat;
+        _gunHeat.sizeDelta = new Vector2(heatBarWidth * (heat / maxHeat), heatBarHeight);
+
+        gunHeatBar.color = Color.Lerp(normalColor, heatColor, heat/maxHeat);
+
         _shieldHealth.fillAmount = playerShip.GetCurrentShield() / playerShip.shipStats.shieldHealth;
         _shipHealth.fillAmount = playerShip.GetCurrentHealth() / playerShip.shipStats.hullHealth;
+
+        overheatText.SetActive(weaponPlayer.overheated);
     }
 
 

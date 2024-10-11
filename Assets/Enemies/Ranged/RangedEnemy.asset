@@ -10,21 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a978bb1772558e42ab09a6d01e8085b, type: 3}
-  m_Name: MeleeEnemy
+  m_Name: RangedEnemy
   m_EditorClassIdentifier: 
-  movementSpeed: 7.5
+  movementSpeed: 6
   speedVariation: 1
-  turningSpeed: 120
-  acceleration: 10
+  turningSpeed: 0
+  acceleration: 15
   stoppingDistance: 7
-  explodeDistance: 9
-  fuseTime: 0.5
-  maxExplosionDamage: 110
-  damageFallOff: 0.4
-  deadMelee: {fileID: 8300000, guid: a70fd86ebb5016a4bb7d1edb6b6ac8d7, type: 3}
+  explodeDistance: 0
+  fuseTime: 0
+  maxExplosionDamage: 0
+  damageFallOff: 0
+  deadMelee: {fileID: 0}
+  shootDistance: 28
+  enemyWeapon: {fileID: 11400000, guid: d6cfbfeae8fbb2a45b7ce1be6e3f45db, type: 2}
   explodeDistanceTrooper: 0
   fuseTimeTrooper: 0
   damageFallOffTrooper: 0
   planetDamage: 0
   deadTrooper: {fileID: 0}
-  shipStats: {fileID: 11400000, guid: 15551aa19c1e24848a242de6d57d5199, type: 2}
+  shipStats: {fileID: 11400000, guid: d7da6f9d9aee5d24c9559f52c380be23, type: 2}

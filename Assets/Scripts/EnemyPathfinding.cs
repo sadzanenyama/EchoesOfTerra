@@ -8,7 +8,7 @@ public class EnemyPathfinding : MonoBehaviour
     private NavMeshAgent agent;
     private Transform player;
 
-    [SerializeField] private EnemyStatsSO enemyStats;
+    public EnemyStatsSO enemyStats;
 
     void Start()
     {
@@ -20,11 +20,13 @@ public class EnemyPathfinding : MonoBehaviour
         agent.speed -= Random.Range(-enemyStats.speedVariation, enemyStats.speedVariation);
         agent.angularSpeed = enemyStats.turningSpeed;
         agent.acceleration = enemyStats.acceleration;
+        agent.stoppingDistance = enemyStats.stoppingDistance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(player.position);
+        if(agent.enabled)
+            agent.SetDestination(player.position);
     }
 }

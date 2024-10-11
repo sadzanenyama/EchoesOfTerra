@@ -8,6 +8,7 @@ TagManager:
   - HitEffect
   - Explosion
   - Enemy
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -18,9 +19,7 @@ TagManager:
   - Player
   - Enemy
   - Minimap
-  - 
-  - 
-  - 
+  - Projectile
   - 
   - 
   - 

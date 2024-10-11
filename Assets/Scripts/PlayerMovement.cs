@@ -11,12 +11,25 @@ public class PlayerMovement : MonoBehaviour
     public float acceleration = 10f;
     public float maxSpeed = 5f;
     public float drag = 2f;
+    public float dashMultiplier = 2f;
+    public float dashDuration;
+    public float dashHeat = 10f;
+
+    private float originalAcceleration;
+    private float originalMaxSpeed;
+
+    private WeaponManager weaponManager;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.drag = drag; // Set drag for deceleration
         rb.freezeRotation = true;
+
+        originalAcceleration = acceleration;
+        originalMaxSpeed = maxSpeed;
+
+        weaponManager = GetComponent<WeaponManager>();
     }
 
     private void Update()
@@ -34,5 +47,25 @@ public class PlayerMovement : MonoBehaviour
             flatVelocity = flatVelocity.normalized * maxSpeed;
             rb.velocity = new Vector3(flatVelocity.x, rb.velocity.y, flatVelocity.z); // Keep y velocity for gravity
         }
+
+        if(Input.GetKeyDown(KeyCode.Space) && !weaponManager.overheated)
+        {
+            StartCoroutine(Dash());
+        }
+    }
+
+    private IEnumerator Dash()
+    {
+        // Temporarily boost speed and acceleration
+        maxSpeed *= dashMultiplier;
+        acceleration *= dashMultiplier;
+
+        weaponManager.AddHeat(dashHeat);
+
+        yield return new WaitForSeconds(dashDuration);
+
+        // Reset speed and acceleration
+        maxSpeed = originalMaxSpeed;
+        acceleration = originalAcceleration;
     }
 }
