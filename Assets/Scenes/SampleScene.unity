@@ -542,6 +542,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5509940247875859724, guid: 3357da4e251249347adf36dc0384ed3e,
+        type: 3}
+      propertyPath: onStartWave
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7237513786122320824, guid: 3357da4e251249347adf36dc0384ed3e,
         type: 3}
       propertyPath: m_Name
@@ -835,7 +840,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: f535cb5cd18731c4195989ef2811f596,
+        type: 3}
     - target: {fileID: 1775738143935867912, guid: fbbd86ce7829e36439fecb01d3a0f791,
         type: 3}
       propertyPath: m_Color.b

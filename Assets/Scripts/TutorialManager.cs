@@ -7,6 +7,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject[] uipopupPanel;
     public GameObject[] playerMovementPopUp;
 
+    [SerializeField] private WaveSpawner _waveSpawner; 
     private int currentIndexInGame = 0;
     private int currentIndexPlayerMovement = 0;
 
@@ -98,9 +99,11 @@ public class TutorialManager : MonoBehaviour
    
     private IEnumerator EndPlayerMovementSequence()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         DeactivateAllPlayerUI();
         inplayPlayerMovementUIComplete = true;
+        // call player
+        _waveSpawner.WaveStart(); 
     }
 
 
