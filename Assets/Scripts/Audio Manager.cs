@@ -24,6 +24,30 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
 ;
         }
+     
+        SetMusicAndSFXVolume(); 
+    }
+
+
+    public float MusicAudioValues()
+    {
+        return musicAudioSource.volume;
+    }
+
+    public float SFXAudioValues()
+    {
+        return sfxAudioSource.volume;
+    }
+    public void Start()
+    {
+        SetMusicAndSFXVolume(); 
+    }
+    public void SetMusicAndSFXVolume()
+    {
+        float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
+        float audioVolume = PlayerPrefs.GetFloat("AudioVolume");
+        musicAudioSource.volume = musicVolume != 0 ? musicVolume : 1;
+        sfxAudioSource.volume = audioVolume != 0 ? audioVolume : 1;
     }
 
     public void PlayMusic(string name)
@@ -37,6 +61,7 @@ public class AudioManager : MonoBehaviour
         {
             musicAudioSource.clip = sound.soundClip;
             musicAudioSource.Play();
+
 
         }
     }
@@ -57,11 +82,13 @@ public class AudioManager : MonoBehaviour
 
     public void AdjustMusicVolume(float value)
     {
-        musicAudioSource.volume = value; 
+        musicAudioSource.volume = value;
+        PlayerPrefs.SetFloat("MusicVolume", musicAudioSource.volume);
     }
     public void AdjustSFXVolume(float value)
     {
         sfxAudioSource.volume = value;
+        PlayerPrefs.SetFloat("AudioVolume", sfxAudioSource.volume);
     }
 
     public void ToggleMusic()

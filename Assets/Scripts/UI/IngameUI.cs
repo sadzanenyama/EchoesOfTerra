@@ -12,7 +12,7 @@ public class IngameUI : MonoBehaviour
     [SerializeField] private GameObject _statsPanel;
     [SerializeField] TextMeshProUGUI _planetPopulationText;
     [SerializeField] private GameObject overheatText;
-
+    [SerializeField] private AudioManager _audioManager;    
     private SpaceShipManager player;
     private WeaponManager weaponPlayer;
     public ShipSO shipStats;
@@ -61,7 +61,7 @@ public class IngameUI : MonoBehaviour
 
     public void OnEnable()
     {
-        AudioManager.instance.PlayMusic("SpaceSounds");
+        _audioManager.PlayMusic("SpaceSounds");
     }
     public void ResetGame()
     {

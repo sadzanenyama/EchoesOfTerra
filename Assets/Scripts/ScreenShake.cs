@@ -29,7 +29,7 @@ public class ScreenShake : MonoBehaviour
         CameraShakerHandler.Shake(hitShake);
     }
 
-    void ShootShake()
+    public void ShootShake()
     {
         CameraShakerHandler.Shake(shootShake);
     }

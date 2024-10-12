@@ -22,7 +22,8 @@ public class MainMenu : MonoBehaviour
         AudioManager.instance.PlayAudioSFX("ButtonClick");
         PlayerPrefs.SetString("StartScreen", "TutorialPage");
         PlayerPrefs.Save();
-        SceneManager.LoadScene(2);
+        UIManager.UIManagerInstance.StartTutorial();
+        
     }
 
     public void CreditsPage()

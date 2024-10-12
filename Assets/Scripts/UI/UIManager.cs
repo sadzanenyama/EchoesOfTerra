@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _levelSelectionPage;
     [SerializeField] private GameObject _upgradePanel;
     [SerializeField] private Transform _screensParent;
+    [SerializeField] private GameObject _loadingScreen; 
     [Tooltip("FPS")]
     [SerializeField] private GameObject _fpsMarker; 
     public static UIManager UIManagerInstance { get; private set; }
@@ -65,20 +67,14 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.DeleteAll(); 
-            StartCoroutine(ShowGameCoverThenFadeOut());
+            PlayerPrefs.DeleteAll();
+            SetAsActiveScreen(_mainMenuScreen);
         }
         AudioManager.instance.PlayMusic("SpaceSounds");
     }
 
   
-    private IEnumerator ShowGameCoverThenFadeOut()
-    {
   
-        SetAsActiveScreen(_gameCoverScreen);
-        yield return new WaitForSeconds(3);
-        SetAsActiveScreen(_mainMenuScreen);
-    }
 
     public bool FPSMarkerActive()
     {
@@ -112,11 +108,23 @@ public class UIManager : MonoBehaviour
         _fpsMarker.gameObject.SetActive(value);
     }
 
-  
+    IEnumerator LoadSceneAsync(int sceneId)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
+        Image loadingBar = _loadingScreen.GetComponent<LoadingScreen>().GetLoadingBar();
+        SetAsActiveScreen(_loadingScreen);
+        while(!operation.isDone) 
+        { 
+            float progressValue = Mathf.Clamp01(operation.progress/0.9f);
+            loadingBar.fillAmount = progressValue;  
+            yield return null; 
+        }
+        
+    }
 
     private IEnumerator QuitGame()
     {
-        SetAsActiveScreen(_gameCoverScreen);
+       
         yield return new WaitForSeconds(3);
         Application.Quit();
     }
@@ -144,8 +152,12 @@ public class UIManager : MonoBehaviour
         SetAsActiveScreen(_upgradePanel,false);
     }
 
+    public void StartTutorial()
+    {
+        StartCoroutine(LoadSceneAsync(2));
+    }
     public void StartLevelOne()
     {
-        SceneManager.LoadScene("SampleScene");
+        StartCoroutine(LoadSceneAsync(0)); 
     }
 }

@@ -26,6 +26,12 @@ public class UpgradePanel : MonoBehaviour
     {
         userXPPointsText.text = playerXPPoints.ToString() + "XP";
     }
+    public void Back()
+    {
+        this.gameObject.SetActive(false);
+        AudioManager.instance.PlayAudioSFX("ButtonClick");
+        ResetUpgrades(); 
+    }
 
     public void IncreaseWeapon()
     {
@@ -78,8 +84,10 @@ public class UpgradePanel : MonoBehaviour
 
     }
 
+    
     public void ResetUpgrades()
     {
+        userXPPointsText.text = playerXPPoints.ToString() + "XP";
         _engineSystem.ResetPips();
         _weaponSystem.ResetPips();
         _shieldSystem.ResetPips();  
