@@ -22,10 +22,12 @@ public class PauseMenuManager : MonoBehaviour
         {
             if (canvasManager.canvas[0].activeInHierarchy)
             {
+                pauseMenuPanel.SetActive(false);
                 Resume();
             }
             else
             {
+                pauseMenuPanel.SetActive(true);
                 Pause();
             }
         }
@@ -34,7 +36,7 @@ public class PauseMenuManager : MonoBehaviour
     public void Pause()
     {
 
-        pauseMenuPanel.SetActive(true); 
+
         canvasManager.SetCanvas(0);
         PauseManager.Pause();     
     }
@@ -42,7 +44,7 @@ public class PauseMenuManager : MonoBehaviour
     public void Resume()
     {
 
-        pauseMenuPanel.SetActive(false);
+   
         canvasManager.SetCanvas(-1);
         PauseManager.Resume();
     }
