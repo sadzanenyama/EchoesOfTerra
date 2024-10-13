@@ -12,6 +12,7 @@ TagManager:
   - Ranged
   - Trooper
   - Planet
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Enemy
   - Minimap
   - Projectile
-  - 
+  - BoundaryWall
   - 
   - 
   - 

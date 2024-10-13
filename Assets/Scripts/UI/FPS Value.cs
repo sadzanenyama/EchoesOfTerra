@@ -5,21 +5,45 @@ using UnityEngine;
 
 public class FPSValue : MonoBehaviour
 {
+    public float fps;
     [SerializeField] private TextMeshProUGUI _FPSValue;
 
+    public int samplesToCount = 10;
+    private int samplesCount;
+    private float totalTime;
 
-    public void Start()
+    [SerializeField] private bool limitFrameRate;
+    [SerializeField] private int FPSLimit = 60;
+
+    // Start is called before the first frame update
+    void Start()
     {
+        samplesCount = 0;
+        totalTime = 0;
+
+        if (limitFrameRate)
+        {
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = FPSLimit;
+        }
+
         InvokeRepeating("GetFPS", 1, 1);
+    }
+
+    private void Update()
+    {
+        samplesCount++;
+        totalTime += Time.deltaTime;
     }
 
     void GetFPS()
     {
-        float fps = (int)(1f / Time.unscaledDeltaTime);
-        SetFBS(fps.ToString());
-    }
-    public void SetFBS(string fps)
-    {
-         _FPSValue.text ="FPS: "+ fps;
+        if (samplesCount >= samplesToCount)
+        {
+            fps = (int)(samplesCount / totalTime);
+            _FPSValue.text = fps + " FPS";
+            totalTime = 0;
+            samplesCount = 0;
+        }
     }
 }

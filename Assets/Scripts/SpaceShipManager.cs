@@ -11,6 +11,7 @@ public class SpaceShipManager : MonoBehaviour
     public bool isDead = false; 
     public delegate void DamageAction();
     public event DamageAction OnTakeDamage;
+    public PauseMenuManager pauseManager; 
 
     private void Awake()
     {
@@ -40,7 +41,10 @@ public class SpaceShipManager : MonoBehaviour
         if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
-            currentHealth = 0;   
+            currentHealth = 0;
+            pauseManager.Pause();
+            IngameUI.Instance.GameOverPanel(); 
+           
         }
 
         OnTakeDamage?.Invoke();

@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 3115469687503230706}
   - component: {fileID: 4769639520364386266}
   - component: {fileID: 5509940247875859724}
+  - component: {fileID: 3997544133191560068}
   m_Layer: 0
   m_Name: GM
   m_TagString: GameController
@@ -255,7 +256,11 @@ MonoBehaviour:
       type: 3}
     shouldExpand: 1
   - amountToPool: 25
-    objectToPool: {fileID: 8175491573009077134, guid: f4ed6b36c8e0ab04699017fe77052b0f,
+    objectToPool: {fileID: 8124741377779489873, guid: 00075962882e8cc4280d105fd3bb5b16,
+      type: 3}
+    shouldExpand: 1
+  - amountToPool: 55
+    objectToPool: {fileID: 6393021117900980865, guid: 2524e2d14a88bbf41811d30a50a7d3b0,
       type: 3}
     shouldExpand: 1
 --- !u!114 &5509940247875859724
@@ -274,6 +279,22 @@ MonoBehaviour:
   waveData: {fileID: 11400000, guid: 0a5feccf871f40547aca56b027bad613, type: 2}
   waveNumber: -1
   spawnPointParent: {fileID: 938805151771551286}
+  wavesToShowDialogue: 
+--- !u!114 &3997544133191560068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7237513786122320824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8489a2f620335dc438b98f223ea5de3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainMenuName: MainMenu
+  canvasManager:
+    canvas: []
 --- !u!1 &7335405090386747937
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,16 +3,21 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 
 public class IngameUI : MonoBehaviour
 {
     [SerializeField] private Image _shipHealth;
     [SerializeField] private Image _shieldHealth;
     [SerializeField] private GameObject _gameOverPanel;
+    [SerializeField] private TextMeshProUGUI _popDeadText;
     [SerializeField] private GameObject _statsPanel;
     [SerializeField] TextMeshProUGUI _planetPopulationText;
     [SerializeField] private GameObject overheatText;
-    [SerializeField] private AudioManager _audioManager;    
+    [SerializeField] private AudioManager _audioManager;
+
+    [SerializeField] private TextMeshProUGUI waveText;
+
     private SpaceShipManager player;
     private WeaponManager weaponPlayer;
     public ShipSO shipStats;
@@ -20,7 +25,7 @@ public class IngameUI : MonoBehaviour
     private WeaponManager playerWeapon;
     private SpaceShipManager playerShip;
 
-    private int enemiesKilled;
+  
 
     public static IngameUI Instance { get; private set; }
 
@@ -33,6 +38,7 @@ public class IngameUI : MonoBehaviour
 
     private void Awake()
     {
+        _popDeadText.text = "";
         heatBarHeight = _gunHeat.GetComponent<RectTransform>().sizeDelta.y;
         heatBarWidth = _gunHeat.GetComponent<RectTransform>().sizeDelta.x;
 
@@ -50,12 +56,15 @@ public class IngameUI : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<SpaceShipManager>();
         weaponPlayer = GameObject.FindWithTag("Player").GetComponent<WeaponManager>();
+        _gameOverPanel.SetActive(false);
     }
 
 
     public void ReducePopulation(int planetAmount)
     {
-        populationPlanet -= planetAmount; 
+        populationPlanet -= planetAmount;
+        _popDeadText.text = "-" + planetAmount.ToString();
+        _popDeadText.gameObject.GetComponent<Animator>().Play("PopDeathAnim", -1, 0f);
         _planetPopulationText.text = populationPlanet.ToString(); 
     }
 
@@ -70,10 +79,23 @@ public class IngameUI : MonoBehaviour
 
     public void MainMenu()
     {
-        PlayerPrefs.SetString("StartScreen", "LevelSelectionPage");  
+        PlayerPrefs.SetString("StartScreen", "MainMenu");  
         PlayerPrefs.Save();
         SceneManager.LoadScene("Main");
       
+    }
+
+
+public void GameOverPanel()
+    {
+        _gameOverPanel.SetActive(true);
+    }
+    public void LevelsPage()
+    {
+        PlayerPrefs.SetString("StartScreen", "LevelSelectionPage");
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Main");
+
     }
 
     private void Update()
@@ -81,6 +103,8 @@ public class IngameUI : MonoBehaviour
         float heat = playerWeapon.GetCurrentHeat();
         float maxHeat = playerWeapon.GetMaxHeat();
         _gunHeat.sizeDelta = new Vector2(heatBarWidth * (heat / maxHeat), heatBarHeight);
+
+        waveText.text = (WaveSpawner.instance!=null) ? WaveSpawner.instance.waveNumber.ToString() + "/" + WaveSpawner.instance.GetNumWaves():"1";
 
         gunHeatBar.color = Color.Lerp(normalColor, heatColor, heat/maxHeat);
 
