@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Rendering;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,8 +12,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     [SerializeField]  private AudioSource musicAudioSource;
     [SerializeField]  private  AudioSource sfxAudioSource;
-
-
+    public AudioMixer musicMixer;
+    public AudioMixer sfxMixer;
     private void Awake()
     {
         if(instance == null)
@@ -31,23 +33,26 @@ public class AudioManager : MonoBehaviour
 
     public float MusicAudioValues()
     {
-        return musicAudioSource.volume;
+        return musicAudioSource.volume*80;
     }
 
     public float SFXAudioValues()
     {
-        return sfxAudioSource.volume;
+        return sfxAudioSource.volume*80;
     }
     public void Start()
     {
+        PlayerPrefs.DeleteAll(); 
         SetMusicAndSFXVolume(); 
     }
     public void SetMusicAndSFXVolume()
     {
         float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
         float audioVolume = PlayerPrefs.GetFloat("AudioVolume");
-        musicAudioSource.volume = musicVolume != 0 ? musicVolume : 1;
+        musicAudioSource.volume = musicVolume != 0 ? musicVolume :1;
         sfxAudioSource.volume = audioVolume != 0 ? audioVolume : 1;
+        musicMixer.SetFloat("Volume", musicVolume * 80);
+        sfxMixer.SetFloat("VolumeSFX", audioVolume*80);
     }
 
     public void PlayMusic(string name)

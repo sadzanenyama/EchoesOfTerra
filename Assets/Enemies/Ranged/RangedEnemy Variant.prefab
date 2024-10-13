@@ -358,6 +358,7 @@ MonoBehaviour:
   currentHealth: 100
   currentShield: 100
   isDead: 0
+  pauseManager: {fileID: 0}
 --- !u!195 &5248463711704086230
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -422,7 +423,8 @@ AudioSource:
   m_GameObject: {fileID: 8124741377779489873}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 7dbaae417842977408e5f18f621db24c,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
