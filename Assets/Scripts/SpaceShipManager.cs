@@ -40,7 +40,8 @@ public class SpaceShipManager : MonoBehaviour
         if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
-            currentHealth = 0;   
+            currentHealth = 0;
+            // player dead
         }
 
         OnTakeDamage?.Invoke();
