@@ -77,10 +77,18 @@ public class IngameUI : MonoBehaviour
 
     public void MainMenu()
     {
-        PlayerPrefs.SetString("StartScreen", "LevelSelectionPage");  
+        PlayerPrefs.SetString("StartScreen", "MainMenu");  
         PlayerPrefs.Save();
         SceneManager.LoadScene("Main");
       
+    }
+
+    public void LevelsPage()
+    {
+        PlayerPrefs.SetString("StartScreen", "LevelSelectionPage");
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Main");
+
     }
 
     private void Update()
@@ -89,7 +97,7 @@ public class IngameUI : MonoBehaviour
         float maxHeat = playerWeapon.GetMaxHeat();
         _gunHeat.sizeDelta = new Vector2(heatBarWidth * (heat / maxHeat), heatBarHeight);
 
-        waveText.text = WaveSpawner.instance.waveNumber.ToString() + "/" + WaveSpawner.instance.GetNumWaves();
+        waveText.text = (WaveSpawner.instance!=null) ? WaveSpawner.instance.waveNumber.ToString() + "/" + WaveSpawner.instance.GetNumWaves():"1";
 
         gunHeatBar.color = Color.Lerp(normalColor, heatColor, heat/maxHeat);
 
