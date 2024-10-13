@@ -8,8 +8,9 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject[] uipopupPanel;
     public GameObject[] playerMovementPopUp;
+    [SerializeField] private GameObject enemy;
+    [SerializeField] private Transform enemyPositionSpawn; 
 
-    [SerializeField] private WaveSpawner _waveSpawner;
     [SerializeField] private GameObject _gameOver; 
     private int currentIndexInGame = 0;
     private int currentIndexPlayerMovement = 0;
@@ -48,10 +49,9 @@ public class TutorialManager : MonoBehaviour
         }
         if (enemyWaveStarted)
         {
-            GameObject enemies = GameObject.FindGameObjectWithTag("Enemy"); 
+            GameObject enemies = GameObject.FindGameObjectWithTag("Melee"); 
             if(enemies == null) 
             {
-               
                 _gameOver.gameObject.SetActive(true);
             }
 
@@ -121,7 +121,7 @@ public class TutorialManager : MonoBehaviour
         DeactivateAllPlayerUI();
         inplayPlayerMovementUIComplete = true;
         // call player
-        _waveSpawner.WaveStart();
+        Instantiate(enemy, enemyPositionSpawn); 
         enemyWaveStarted = true; 
     }
 

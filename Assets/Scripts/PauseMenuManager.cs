@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenuManager : MonoBehaviour
 {
     public string MainMenuName = "MainMenu";
-
+    public static bool gamePaused = false; 
     [SerializeField] private CanvasManager canvasManager = new CanvasManager();
 
     private void Awake()
@@ -33,12 +33,15 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Pause()
     {
+        gamePaused= true;
+
         canvasManager.SetCanvas(0);
         PauseManager.Pause();     
     }
 
     public void Resume()
     {
+        gamePaused = true;
         canvasManager.SetCanvas(-1);
         PauseManager.Resume();
     }
