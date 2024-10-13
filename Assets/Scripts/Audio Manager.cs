@@ -33,26 +33,22 @@ public class AudioManager : MonoBehaviour
 
     public float MusicAudioValues()
     {
-        return musicAudioSource.volume*80;
+        return musicAudioSource.volume;
     }
 
     public float SFXAudioValues()
     {
-        return sfxAudioSource.volume*80;
+        return sfxAudioSource.volume;
     }
-    public void Start()
-    {
-        PlayerPrefs.DeleteAll(); 
-        SetMusicAndSFXVolume(); 
-    }
+ 
     public void SetMusicAndSFXVolume()
     {
         float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
         float audioVolume = PlayerPrefs.GetFloat("AudioVolume");
-        musicAudioSource.volume = musicVolume != 0 ? musicVolume :1;
-        sfxAudioSource.volume = audioVolume != 0 ? audioVolume : 1;
-        musicMixer.SetFloat("Volume", musicVolume * 80);
-        sfxMixer.SetFloat("VolumeSFX", audioVolume*80);
+        musicAudioSource.volume =  musicVolume;
+        sfxAudioSource.volume =  audioVolume;
+        musicMixer.SetFloat("Volume", musicVolume);
+        sfxMixer.SetFloat("VolumeSFX", audioVolume);
     }
 
     public void PlayMusic(string name)
@@ -70,6 +66,7 @@ public class AudioManager : MonoBehaviour
 
         }
     }
+  
     public void PlayAudioSFX(string name)
     {
         Sound sound = Array.Find(audioSounds, soundItem => soundItem.nameOfSound == name);

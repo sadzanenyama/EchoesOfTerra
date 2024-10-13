@@ -18,8 +18,8 @@ public class SettingsPage : MonoBehaviour
     public AudioMixer sfx;
     public void Start()
     {
-        _musicSlider.value = AudioManager.instance.MusicAudioValues();
-        _sfxSlider.value = AudioManager.instance.SFXAudioValues();
+        _musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        _sfxSlider.value = PlayerPrefs.GetFloat("AudioVolume");
         ChangeSoundEffectsVolume();
         ChangeMusicVolume();
         _resDropDown.ClearOptions();
@@ -56,12 +56,12 @@ public class SettingsPage : MonoBehaviour
 
     public void ChangeMusicVolume()
     {
-        AudioManager.instance.AdjustMusicVolume(_musicSlider.value/80);
+        AudioManager.instance.AdjustMusicVolume(_musicSlider.value);
     }
 
     public void ChangeSoundEffectsVolume()
     {
-        AudioManager.instance.AdjustSFXVolume(_sfxSlider.value/80);
+        AudioManager.instance.AdjustSFXVolume(_sfxSlider.value);
     }
 
     public void SetResValue() 
@@ -71,12 +71,12 @@ public class SettingsPage : MonoBehaviour
 
     public void SetVolumeMixer(float volume)
     {
-        PlayerPrefs.SetFloat("MusicVolume", volume/80);
+        PlayerPrefs.SetFloat("MusicVolume", volume);
         music.SetFloat("Volume", volume); 
     }
     public void SetVolumeSFX(float volume)
     {
-        PlayerPrefs.SetFloat("AudioVolume", volume / 80);
+        PlayerPrefs.SetFloat("AudioVolume", volume );
         sfx.SetFloat("VolumeSFX", volume);
     }
     public void VSYNC()
