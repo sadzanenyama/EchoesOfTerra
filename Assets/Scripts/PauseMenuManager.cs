@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class PauseMenuManager : MonoBehaviour
 {
     public string MainMenuName = "MainMenu";
-    public static bool gamePaused = false; 
     [SerializeField] private CanvasManager canvasManager = new CanvasManager();
-
+    [SerializeField] private GameObject pauseMenuPanel; 
     private void Awake()
     {
         canvasManager.SetCanvas(-1);
         Time.timeScale = 1;
         PauseManager.SetVariables();
+        pauseMenuPanel.SetActive(false);
     }
 
     private void Update()
@@ -33,15 +33,16 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Pause()
     {
-        gamePaused= true;
 
+        pauseMenuPanel.SetActive(true); 
         canvasManager.SetCanvas(0);
         PauseManager.Pause();     
     }
 
     public void Resume()
     {
-        gamePaused = true;
+
+        pauseMenuPanel.SetActive(false);
         canvasManager.SetCanvas(-1);
         PauseManager.Resume();
     }
