@@ -72,12 +72,12 @@ public class SettingsPage : MonoBehaviour
     public void SetVolumeMixer(float volume)
     {
         PlayerPrefs.SetFloat("MusicVolume", volume);
-        music.SetFloat("Volume", volume); 
+        music.SetFloat("Volume", Mathf.Log10(volume) * 20); 
     }
     public void SetVolumeSFX(float volume)
     {
         PlayerPrefs.SetFloat("AudioVolume", volume );
-        sfx.SetFloat("VolumeSFX", volume);
+        sfx.SetFloat("VolumeSFX", Mathf.Log10(volume) * 20);
     }
     public void VSYNC()
     {
