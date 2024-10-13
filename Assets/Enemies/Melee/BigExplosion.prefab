@@ -4991,7 +4991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ee750897e1fdde46b6eb48539d17b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 2
+  time: 4
 --- !u!82 &6645735644616247972
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4999,7 +4999,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121192042590650}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1bb141c8696c7124bb648b7e897f2c5d, type: 3}

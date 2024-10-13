@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeleeExplode : MonoBehaviour
 {
-    [SerializeField] private EnemyStatsSO enemyStats;
+    private EnemyStatsSO enemyStats;
     [SerializeField] private GameObject explosion;
     [SerializeField] private Transform explosionPosition;
 
@@ -16,17 +16,14 @@ public class MeleeExplode : MonoBehaviour
 
     private void Start()
     {
+        enemyStats = GetComponent<EnemyPathfinding>().enemyStats;
+
         player = GameObject.FindWithTag("Player").transform;
         audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            StartExplode();
-        }
-
         if (explode)
             return;
 

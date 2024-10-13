@@ -18,6 +18,7 @@ public class WeaponSO : ScriptableObject
 
     [Header("Other")]
     public AudioClip shootSound;
+    public AudioClip overheatSound;
 
 
     [Header("Upgraded stats")]

@@ -51,6 +51,7 @@ public class TutorialManager : MonoBehaviour
             GameObject enemies = GameObject.FindGameObjectWithTag("Enemy"); 
             if(enemies == null) 
             {
+               
                 _gameOver.gameObject.SetActive(true);
             }
 

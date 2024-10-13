@@ -16,9 +16,15 @@ MonoBehaviour:
   speedVariation: 1
   turningSpeed: 120
   acceleration: 10
+  stoppingDistance: 7
   explodeDistance: 9
   fuseTime: 0.5
   maxExplosionDamage: 110
   damageFallOff: 0.4
   deadMelee: {fileID: 8300000, guid: a70fd86ebb5016a4bb7d1edb6b6ac8d7, type: 3}
+  explodeDistanceTrooper: 0
+  fuseTimeTrooper: 0
+  damageFallOffTrooper: 0
+  planetDamage: 0
+  deadTrooper: {fileID: 0}
   shipStats: {fileID: 11400000, guid: 15551aa19c1e24848a242de6d57d5199, type: 2}

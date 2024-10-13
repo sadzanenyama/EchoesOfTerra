@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: PlayerWeapon
   m_EditorClassIdentifier: 
   projectileSpeed: 35
-  fireRate: 5
+  fireRate: 2
   accuracy: 5
   damage: 25
-  heatPerShot: 10
-  coolRate: 50
-  shootSound: {fileID: 8300000, guid: a57b8ad0b9bd414458fd8f58d86c675c, type: 3}
+  heatPerShot: 25
+  coolRate: 25
+  shootSound: {fileID: 8300000, guid: 8ab2170bd3740284799211eb56a69e49, type: 3}
+  overheatSound: {fileID: 8300000, guid: a0b31d4600635d244b75d100d693c255, type: 3}

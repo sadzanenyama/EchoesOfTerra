@@ -72,7 +72,7 @@ public class WaveSpawner : MonoBehaviour
         if (searchCountdown > 0) //Countdown so that we don't check for enemies every frame (Waste of resources)
             return true;
 
-        int numEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        int numEnemies = GameObject.FindGameObjectsWithTag("Melee").Length + GameObject.FindGameObjectsWithTag("Ranged").Length + GameObject.FindGameObjectsWithTag("Trooper").Length;
 
         if (numEnemies == 0)
         {

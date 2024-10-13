@@ -2142,6 +2142,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Back
       objectReference: {fileID: 0}
+    - target: {fileID: 7224678423981647734, guid: bf7e61a0ac25edb45bfc0eb761c76831,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224678423981647734, guid: bf7e61a0ac25edb45bfc0eb761c76831,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224678423981647734, guid: bf7e61a0ac25edb45bfc0eb761c76831,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 715442746146852938}
+    - target: {fileID: 7224678423981647734, guid: bf7e61a0ac25edb45bfc0eb761c76831,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224678423981647734, guid: bf7e61a0ac25edb45bfc0eb761c76831,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Back
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224678423981647734, guid: bf7e61a0ac25edb45bfc0eb761c76831,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradePanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224678423981647734, guid: bf7e61a0ac25edb45bfc0eb761c76831,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8846912149798234425, guid: bf7e61a0ac25edb45bfc0eb761c76831,
         type: 3}
       propertyPath: m_Pivot.x

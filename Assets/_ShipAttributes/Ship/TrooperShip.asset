@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b685a6e2d9fe0cc46be81b9adadfce46, type: 3}
-  m_Name: BaseShip
+  m_Name: TrooperShip
   m_EditorClassIdentifier: 
-  hullHealth: 100
-  shieldHealth: 100
+  hullHealth: 200
+  shieldHealth: 50
   shieldRechargeRate: 10
   shieldRechargeDelay: 1

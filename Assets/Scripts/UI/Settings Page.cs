@@ -13,8 +13,8 @@ public class SettingsPage : MonoBehaviour
     [SerializeField] private Toggle _fpsToggle;
     public void Start()
     {
-        _musicSlider.value = 1;
-        _sfxSlider.value = 1;
+        _musicSlider.value = AudioManager.instance.MusicAudioValues();
+        _sfxSlider.value = AudioManager.instance.SFXAudioValues();
         ChangeSoundEffectsVolume();
         ChangeMusicVolume();
         _resDropDown.ClearOptions();
@@ -45,7 +45,7 @@ public class SettingsPage : MonoBehaviour
 
     public void ChangeSoundEffectsVolume()
     {
-        AudioManager.instance.AdjustMusicVolume(_sfxSlider.value);
+        AudioManager.instance.AdjustSFXVolume(_sfxSlider.value);
     }
 
     public void SetResValue() 

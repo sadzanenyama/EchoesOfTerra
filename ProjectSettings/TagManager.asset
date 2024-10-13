@@ -7,7 +7,11 @@ TagManager:
   - Projectile
   - HitEffect
   - Explosion
-  - Enemy
+  - EnemyProjectile
+  - Melee
+  - Ranged
+  - Trooper
+  - Planet
   layers:
   - Default
   - TransparentFX
@@ -18,9 +22,7 @@ TagManager:
   - Player
   - Enemy
   - Minimap
-  - 
-  - 
-  - 
+  - Projectile
   - 
   - 
   - 
