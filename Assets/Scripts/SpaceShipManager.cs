@@ -8,24 +8,45 @@ public class SpaceShipManager : MonoBehaviour
     public float currentShield;
 
     private float timeTilShieldRecharge;
-    public bool isDead = false; 
+    private bool isDead = false; 
     public delegate void DamageAction();
     public event DamageAction OnTakeDamage;
 
+    bool isPlayer = false;
+    bool playedShieldBreakSound;
+
+    public AudioClip shieldBreakSound;
+    private AudioSource audioSource;
+
     private void Awake()
     {
+        isPlayer = gameObject.tag == "Player";
         currentHealth = shipStats.hullHealth;
         currentShield = shipStats.shieldHealth;
         timeTilShieldRecharge = 0;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
-
-    public void Start()
+    private void OnEnable()
     {
-          
+        currentHealth = shipStats.hullHealth;
+        currentShield = shipStats.shieldHealth;
+        isDead = false;
+        timeTilShieldRecharge = 0;
     }
+
     public void TakeDamage(float damage)
     {
+        if (isDead)
+            return;
+
+        if (currentHealth <= 0)
+        {
+            isDead = true;
+            Die();          
+        }
+
         if (currentShield > 0)
         {
             currentShield -= damage;
@@ -34,16 +55,16 @@ public class SpaceShipManager : MonoBehaviour
         {
             currentHealth -= damage;
         }
-
         timeTilShieldRecharge = shipStats.shieldRechargeDelay;
 
-        if (currentHealth <= 0 && !isDead)
-        {
-            isDead = true;
-            currentHealth = 0;   
-        }
-
         OnTakeDamage?.Invoke();
+    }
+
+    void Die()
+    {
+        GameObject explosion = ObjectPooler.Singleton.GetPooledObjectByTag("Explosion");
+        explosion.GetComponent<ExplosionDamage>().Explode(transform.position);
+        gameObject.SetActive(false);
     }
 
     public float GetCurrentShield()
@@ -69,6 +90,20 @@ public class SpaceShipManager : MonoBehaviour
             {
                 currentShield += shipStats.shieldRechargeRate * Time.deltaTime;
             }
+        }
+
+        if (!isPlayer)
+            return;
+
+        if (currentShield > 0.25f * shipStats.shieldHealth)
+        {
+            playedShieldBreakSound = false;
+        }
+
+        if (currentShield <= 0 && !playedShieldBreakSound)
+        {
+            audioSource.PlayOneShot(shieldBreakSound, 0.2f);
+            playedShieldBreakSound = true;
         }
     }
 }

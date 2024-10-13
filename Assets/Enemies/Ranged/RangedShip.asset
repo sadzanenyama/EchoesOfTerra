@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b685a6e2d9fe0cc46be81b9adadfce46, type: 3}
   m_Name: RangedShip
   m_EditorClassIdentifier: 
-  hullHealth: 100
+  hullHealth: 25
   shieldHealth: 100
   shieldRechargeRate: 10
-  shieldRechargeDelay: 1
+  shieldRechargeDelay: 3

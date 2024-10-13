@@ -11,6 +11,11 @@ public class LifetimeDespawn : MonoBehaviour
         StartCoroutine(Despawn());
     }
 
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     IEnumerator Despawn()
     {
         yield return new WaitForSeconds(time);
