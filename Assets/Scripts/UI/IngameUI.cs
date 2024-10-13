@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 
 public class IngameUI : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class IngameUI : MonoBehaviour
     private WeaponManager playerWeapon;
     private SpaceShipManager playerShip;
 
-    private int enemiesKilled;
+  
 
     public static IngameUI Instance { get; private set; }
 
@@ -55,6 +56,7 @@ public class IngameUI : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<SpaceShipManager>();
         weaponPlayer = GameObject.FindWithTag("Player").GetComponent<WeaponManager>();
+        _gameOverPanel.SetActive(false);
     }
 
 
@@ -83,6 +85,11 @@ public class IngameUI : MonoBehaviour
       
     }
 
+
+public void GameOverPanel()
+    {
+        _gameOverPanel.SetActive(true);
+    }
     public void LevelsPage()
     {
         PlayerPrefs.SetString("StartScreen", "LevelSelectionPage");

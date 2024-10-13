@@ -11,6 +11,7 @@ public class SpaceShipManager : MonoBehaviour
     private bool isDead = false; 
     public delegate void DamageAction();
     public event DamageAction OnTakeDamage;
+    public PauseMenuManager pauseManager; 
 
     bool isPlayer = false;
     bool playedShieldBreakSound;
@@ -64,6 +65,13 @@ public class SpaceShipManager : MonoBehaviour
     {
         GameObject explosion = ObjectPooler.Singleton.GetPooledObjectByTag("Explosion");
         explosion.GetComponent<ExplosionDamage>().Explode(transform.position);
+
+        if(isPlayer)
+        {
+            pauseManager.Pause();
+            IngameUI.Instance.GameOverPanel(); 
+        }
+
         gameObject.SetActive(false);
     }
 

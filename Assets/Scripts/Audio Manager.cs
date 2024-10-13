@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Rendering;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,8 +12,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     [SerializeField]  private AudioSource musicAudioSource;
     [SerializeField]  private  AudioSource sfxAudioSource;
-
-
+    public AudioMixer musicMixer;
+    public AudioMixer sfxMixer;
     private void Awake()
     {
         if(instance == null)
@@ -38,16 +40,13 @@ public class AudioManager : MonoBehaviour
     {
         return sfxAudioSource.volume;
     }
-    public void Start()
-    {
-        SetMusicAndSFXVolume(); 
-    }
+ 
     public void SetMusicAndSFXVolume()
     {
         float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
         float audioVolume = PlayerPrefs.GetFloat("AudioVolume");
-        musicAudioSource.volume = musicVolume != 0 ? musicVolume : 1;
-        sfxAudioSource.volume = audioVolume != 0 ? audioVolume : 1;
+        musicMixer.SetFloat("Volume", Mathf.Log10(musicVolume)*20);
+        sfxMixer.SetFloat("VolumeSFX", Mathf.Log10(audioVolume) * 20);
     }
 
     public void PlayMusic(string name)
@@ -65,6 +64,7 @@ public class AudioManager : MonoBehaviour
 
         }
     }
+  
     public void PlayAudioSFX(string name)
     {
         Sound sound = Array.Find(audioSounds, soundItem => soundItem.nameOfSound == name);

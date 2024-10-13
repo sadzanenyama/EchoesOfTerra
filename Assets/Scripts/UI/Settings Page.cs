@@ -1,6 +1,7 @@
 
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 
@@ -9,19 +10,34 @@ public class SettingsPage : MonoBehaviour
     [SerializeField] private Slider _musicSlider;
     [SerializeField] private Slider _sfxSlider;
     [SerializeField] private TMP_Dropdown _resDropDown;
+    [SerializeField] private TextMeshProUGUI _resText;
+    [SerializeField] private TMP_Dropdown _graphicsDrop;
     [SerializeField] private Toggle _vsyncToggle;
     [SerializeField] private Toggle _fpsToggle;
+    public AudioMixer music;
+    public AudioMixer sfx;
     public void Start()
     {
-        _musicSlider.value = AudioManager.instance.MusicAudioValues();
-        _sfxSlider.value = AudioManager.instance.SFXAudioValues();
+        _musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        _sfxSlider.value = PlayerPrefs.GetFloat("AudioVolume");
         ChangeSoundEffectsVolume();
         ChangeMusicVolume();
         _resDropDown.ClearOptions();
-        _resDropDown.AddOptions(ResoultionManager.ResInstance.GetScreenOptions());
-        _resDropDown.value = 0;
-        ResoultionManager.ResInstance.SetCurrentIndex(0);
-        _resDropDown.RefreshShownValue();
+        if(ResoultionManager.ResInstance.GetScreenOptions() != null)
+        {
+            _resDropDown.AddOptions(ResoultionManager.ResInstance.GetScreenOptions());
+            
+            _resDropDown.value = 0;
+            ResoultionManager.ResInstance.SetCurrentIndex(0);
+            _resDropDown.RefreshShownValue();
+        }
+        else
+        {
+            _resDropDown.gameObject.SetActive(false);
+            _resText.gameObject.SetActive(false);
+        }
+        
+
         if(QualitySettings.vSyncCount == 0)
         {
             _vsyncToggle.isOn = false;
@@ -53,13 +69,31 @@ public class SettingsPage : MonoBehaviour
         ResoultionManager.ResInstance.SetResolution(_resDropDown.value);
     }
 
+    public void SetVolumeMixer(float volume)
+    {
+        PlayerPrefs.SetFloat("MusicVolume", volume);
+        music.SetFloat("Volume", Mathf.Log10(volume) * 20); 
+    }
+    public void SetVolumeSFX(float volume)
+    {
+        PlayerPrefs.SetFloat("AudioVolume", volume );
+        sfx.SetFloat("VolumeSFX", Mathf.Log10(volume) * 20);
+    }
     public void VSYNC()
     {
         QualitySettings.vSyncCount = _vsyncToggle.isOn ? 1 :0;
     }
-
+    public void SetQuality(int quality)
+    {
+        QualitySettings.SetQualityLevel(quality);
+    }
     public void FPS()
     {
         UIManager.UIManagerInstance.SetFPSActive(_fpsToggle.isOn);
+    }
+
+    public void FullScreen(bool fullScreen)
+    {
+        Screen.fullScreen = fullScreen;
     }
 }
