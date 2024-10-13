@@ -95,7 +95,7 @@ public class SpaceShipManager : MonoBehaviour
         if (!isPlayer)
             return;
 
-        if (currentShield > 0.25f * shipStats.shieldHealth)
+        if (currentShield > 0.1f * shipStats.shieldHealth)
         {
             playedShieldBreakSound = false;
         }

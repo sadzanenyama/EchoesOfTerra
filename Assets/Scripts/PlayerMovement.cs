@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = new Vector3(moveX, 0, moveZ).normalized; // Normalize to prevent faster diagonal movement
 
-        rb.AddForce(movement * acceleration, ForceMode.Acceleration);
+        rb.AddForce(movement * acceleration * Time.deltaTime, ForceMode.Acceleration);
 
         Vector3 flatVelocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // Ignore y-axis (gravity)
         if (flatVelocity.magnitude > maxSpeed)

@@ -2500,6 +2500,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8043034265725654076, guid: 62b531e00a0fca64690df99786c1473d,
         type: 3}
+      propertyPath: acceleration
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043034265725654076, guid: 62b531e00a0fca64690df99786c1473d,
+        type: 3}
       propertyPath: dashMultiplier
       value: 64
       objectReference: {fileID: 0}
@@ -4514,6 +4519,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RangedEnemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124741377779489873, guid: 00075962882e8cc4280d105fd3bb5b16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9177427973293037451, guid: 00075962882e8cc4280d105fd3bb5b16,
         type: 3}

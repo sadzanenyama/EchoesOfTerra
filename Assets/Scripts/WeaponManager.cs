@@ -19,8 +19,11 @@ public class WeaponManager : MonoBehaviour
 
     private AudioSource audioSource;
 
+    bool isPlayer;
+
     private void Awake()
     {
+        isPlayer = gameObject.tag == "Player";
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -77,6 +80,7 @@ public class WeaponManager : MonoBehaviour
         timeTilNextShot = 1f;
         currentHeat += weaponStats.heatPerShot;
         audioSource.PlayOneShot(weaponStats.shootSound, 0.2f);
-        OnShoot?.Invoke();
+        if(isPlayer)
+            OnShoot?.Invoke();
     }
 }
