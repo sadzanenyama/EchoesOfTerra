@@ -6,12 +6,20 @@ public class Planet : MonoBehaviour
 {
     [SerializeField] private ParticleSystem particleSystem;
     [SerializeField] private ScreenShake _screenShake;
-    [SerializeField] private AudioManager _audioManager;
+
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip ExplosionSound;
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
+
     public void Explode(Vector3 position)
     {
         transform.position = position;
         particleSystem.Stop();
-        _audioManager.PlayAudioSFX("Explosion");
+        _audioSource.PlayOneShot(ExplosionSound, 0.4f);
         particleSystem.Play();
         _screenShake.ShootShake();
     }

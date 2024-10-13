@@ -6,33 +6,42 @@ public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState { Spawning, Waiting, BetweenWave};
     public SpawnState state = SpawnState.BetweenWave;
-    [SerializeField] private bool onStartWave; 
-    [SerializeField] protected WaveMasterSO waveData;
+    [SerializeField] private WaveMasterSO waveData;
 
-    [SerializeField] protected int waveNumber;
+    public int waveNumber;
 
     protected float searchCountdown = 1f;
-    [SerializeField] protected Transform spawnPointParent;
+    [SerializeField] private Transform spawnPointParent;
 
     protected Transform[] spawnPoints;
 
-    protected virtual void Start()
+    public static WaveSpawner instance;
+
+    public List<int> wavesToShowDialogue = new List<int>();
+    bool shownDialogue;
+
+    void Start()
     {
+        instance = this;
+
         spawnPoints = new Transform[spawnPointParent.childCount];
 
         for(int i = 0; i < spawnPoints.Length; i++)
         {
             spawnPoints[i] = spawnPointParent.GetChild(i).transform;
         }
-        if (onStartWave)
-        {
-            WaveStart();
-        }
- 
+
+        Dialogue.instance.DisplayMainMessage();
     }
 
     private void Update()
     {
+        /*if(wavesToShowDialogue.Contains(waveNumber) && !shownDialogue)
+        {
+            Dialogue.instance.DisplayMainMessage();
+            shownDialogue = true;
+        }*/
+
         if (state == SpawnState.BetweenWave)
             return;
 
@@ -61,6 +70,7 @@ public class WaveSpawner : MonoBehaviour
 
     public void WaveStart()
     {
+       // shownDialogue = false;
         waveNumber++;
         StartCoroutine(SpawnWave(waveData.waves[waveNumber]));
     }
@@ -117,5 +127,10 @@ public class WaveSpawner : MonoBehaviour
     public Vector3 GetSpawnPosition(WaveGroup.SpawnPositions spawn)
     {
         return spawnPoints[(int)spawn].position;
+    }
+
+    public int GetNumWaves()
+    {
+        return waveData.waves.Length;
     }
 }

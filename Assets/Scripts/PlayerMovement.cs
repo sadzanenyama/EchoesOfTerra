@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     private WeaponManager weaponManager;
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip playerDash;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         originalMaxSpeed = maxSpeed;
 
         weaponManager = GetComponent<WeaponManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -61,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
         acceleration *= dashMultiplier;
 
         weaponManager.AddHeat(dashHeat);
+
+        audioSource.PlayOneShot(playerDash, 0.6f);
 
         yield return new WaitForSeconds(dashDuration);
 

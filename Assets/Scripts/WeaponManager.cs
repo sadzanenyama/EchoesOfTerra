@@ -6,6 +6,7 @@ public class WeaponManager : MonoBehaviour
 { 
     public WeaponSO weaponStats;
     [SerializeField] private Transform bulletSpawn;
+    [SerializeField] private ParticleSystem muzzleFlash;
 
     [SerializeField] private float timeTilNextShot;
     [SerializeField] private float currentHeat = 0f;
@@ -67,6 +68,8 @@ public class WeaponManager : MonoBehaviour
         {
             return; //Can't shoot
         }
+
+        muzzleFlash.Play(true);
 
         GameObject projectile = ObjectPooler.Singleton.GetPooledObjectByTag(projectileType);
         projectile.GetComponent<Projectile>().SetProjectile(bulletSpawn, weaponStats);

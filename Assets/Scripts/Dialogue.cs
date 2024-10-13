@@ -1,105 +1,87 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    public GameObject ingameUI;
+    public LevelDialogueSO levelDialogue;
+
     public GameObject DialogueUI;
-    public GameObject mainMessage;
     public GameObject sideMessage;
     public Button continueButton;
-    public float typeDelay = 0.1f;  // Delay between each letter
+    public float timeBtwCharacters = 0.05f;
+    public AudioClip typingSound;
+    private AudioSource audioSource;
 
-    [TextArea(3,5)]
-    public string[] lvlOnePreMessage;
-   // [TextArea(3, 5)]
-  //  public string[] lvlOnePostMessage;
-    [TextArea(3, 5)]
-    public string[] lvlTwoPreMessage;
-  //  [TextArea(3, 5)]
-   // public string[] lvlTwoPostMessage;
-    [TextArea(3, 5)]
-    public string[] lvlThreePreMessage;
-    [TextArea(3, 5)]
-    public string[] lvlThreePostMessage;
-    [TextArea(3, 5)]
-    public string[] lvlFourAPreMessage;
-    [TextArea(3, 5)]
-    public string[] lvlFourAPostMessage;
-    [TextArea(3, 5)]
-    public string[] lvlFourBPreMessage;
-    [TextArea(3, 5)]
-    public string[] lvlFourBPostMessage;
+    public TextMeshProUGUI nameDisplay;
+    public Image icon;
+    public TextMeshProUGUI mainTextDisplay;
+    public TextMeshProUGUI sideTextDisplay;
 
-    [TextArea(3, 5)]
-    public string[] messages;
+    public int currentMessageIndex; 
+    public int currentDialogueIndex;
 
-    [TextArea(3, 5)]
-    public string[] diaryEntries;
-    private int currentMessageIndex; //tracks which sentence is currently displayed
-    private void Start()
+    public static Dialogue instance;
+
+
+    private void Awake()
     {
-       // ingameUI.SetActive(false);
+        instance = this;
+        audioSource = GetComponent<AudioSource>();
         continueButton.onClick.AddListener(ShowNextMessage);
-        messages = lvlOnePreMessage;
-        currentMessageIndex = 0;
-
-        UpdateLevelMessage(messages[currentMessageIndex]);
+        currentMessageIndex = -1;
+        currentDialogueIndex = 0;
     }
 
     // Typewriter effect for Unity Text
-    public IEnumerator TypeText(Text uiText, string fullText)
+    public IEnumerator TypeText(TextMeshProUGUI uiText, string textToType, float timeBtwCharacters = 0.05f)
     {
-        uiText.text = "";  // Clear the text initially
+        uiText.maxVisibleCharacters = 0;
+        uiText.text = textToType;
 
-        foreach (char letter in fullText.ToCharArray())
+        foreach (char letter in textToType.ToCharArray())
         {
-            uiText.text += letter;  // Add one letter at a time
-            yield return new WaitForSeconds(typeDelay);  // Wait before the next letter
+            uiText.maxVisibleCharacters += 1;
+            if (typingSound != null)
+                audioSource.PlayOneShot(typingSound, 0.1f);
+            yield return new WaitForSecondsRealtime(timeBtwCharacters);
         }
     }
 
     public void ShowNextMessage() {
         // Move to the next sentence
-        currentMessageIndex++;
+        currentDialogueIndex++;
+        StopAllCoroutines();
 
         // If there are more sentences, display the next one
-        if (currentMessageIndex < messages.Length)
+        if (currentDialogueIndex < levelDialogue.messages[currentMessageIndex].dialogue.Length)
         {
-            StartCoroutine(TypeText(mainMessage.GetComponent<Text>(), messages[currentMessageIndex]));
+            StartCoroutine(TypeText(mainTextDisplay, levelDialogue.messages[currentMessageIndex].dialogue[currentDialogueIndex]));
         }
         else
         {
             // All sentences have been shown, handle what happens next (e.g., start a new scene, etc.)
             Debug.Log("All messages displayed");
-            ingameUI.SetActive(true);
             DialogueUI.SetActive(false);
+            PauseManager.Resume();
         }
     }
  
-    public void UpdateLevelMessage(string newText)
+    public void DisplayMainMessage()
     {
+        gameObject.SetActive(true);
+        currentMessageIndex++;
+        currentDialogueIndex = 0;
+        PauseManager.Pause();
         StopAllCoroutines();  // Stop any previous coroutine to avoid overlapping
-        StartCoroutine(TypeText(mainMessage.GetComponent<Text>(), newText));
+        StartCoroutine(TypeText(mainTextDisplay, levelDialogue.messages[currentMessageIndex].dialogue[0]));
     }
 
 
-    public void UpdateInGameMessage(string newText)
+/*    public void UpdateInGameMessage(string newText)
     {
         StopAllCoroutines();  // Stop any previous coroutine to avoid overlapping
-        StartCoroutine(TypeText(sideMessage.GetComponent<Text>(), newText));
-    }
+        StartCoroutine(TypeText(sideTextDisplay.GetComponent<Text>(), newText));
+    }*/
 }
-
-/*
- * Pre Level:
- * "I hope you enjoyed your space leave, but I have to say I’m happy you’re back. 
- * We’ve been getting reports of attacks on this mining colony—probably pirates. 
- * Just keep an eye out for any suspicious ships."
- * 
- * "
- * 
- * 
- * 
- */
