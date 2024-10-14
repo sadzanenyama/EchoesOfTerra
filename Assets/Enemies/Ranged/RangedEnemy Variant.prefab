@@ -107,7 +107,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224,
     type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.6389766, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -694,6 +694,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9177427973293037451}
     m_Modifications:
+    - target: {fileID: 2797385609063748644, guid: 677310e7d6fc1c548a12839a2047f49b,
+        type: 3}
+      propertyPath: spaceShipHealth
+      value: 
+      objectReference: {fileID: 7000425020445296110}
     - target: {fileID: 6114408532009925753, guid: 677310e7d6fc1c548a12839a2047f49b,
         type: 3}
       propertyPath: m_Name
