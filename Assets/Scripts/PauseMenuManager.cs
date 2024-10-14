@@ -27,25 +27,22 @@ public class PauseMenuManager : MonoBehaviour
             }
             else
             {
-                pauseMenuPanel.SetActive(true);
-                Pause();
+                if (!PauseManager.isPaused)
+                {
+                    pauseMenuPanel.SetActive(true);
+                    Pause();
+                }
             }
         }
     }
 
     public void Pause()
     {
-
-
-        canvasManager.SetCanvas(0);
         PauseManager.Pause();     
     }
 
     public void Resume()
     {
-
-   
-        canvasManager.SetCanvas(-1);
         PauseManager.Resume();
     }
 
@@ -54,18 +51,8 @@ public class PauseMenuManager : MonoBehaviour
         SceneManager.LoadScene(MainMenuName);
     }
 
-    public void OptionsMenu()
-    {
-        canvasManager.SetCanvas(1);
-    }
-
     public void Quit()
     {
         Application.Quit();
-    }
-
-    public void BackToBase()
-    {
-        canvasManager.BackToBaseCanvas();
     }
 }

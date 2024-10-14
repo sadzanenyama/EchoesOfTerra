@@ -12,11 +12,7 @@ public class EnemyPathfinding : MonoBehaviour
 
     void Start()
     {
-        if (enemyStats.name != "Trooper")
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-        else
-            target = GameObject.FindGameObjectWithTag("Planet").transform;
-
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
 
         agent.speed = enemyStats.movementSpeed;

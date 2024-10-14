@@ -9,6 +9,8 @@ public static class PauseManager
     private static PlayerAiming playerAiming;
     private static GameObject HUD;
 
+    public static bool isPaused = false;
+
     public static void SetVariables()
     {
         playerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
@@ -24,6 +26,8 @@ public static class PauseManager
         playerAiming.enabled = true;
         HUD.SetActive(true);
 
+        isPaused = false;
+
         if (pauseTime)
             Time.timeScale = 1;
     }
@@ -34,6 +38,8 @@ public static class PauseManager
         playerWeapon.enabled = false;
         playerAiming.enabled = false;
         HUD.SetActive(false);
+
+        isPaused = true;
 
         if (pauseTime)
             Time.timeScale = 0;

@@ -11,7 +11,7 @@ public class UpgradePanel : MonoBehaviour
     public int userXPPoints;
     private int maxUpgradePips = 10; 
     [Header("Visual Elements")]
-    private int playerXPPoints = 50;
+    private int playerXPPoints = 0;
     public TextMeshProUGUI userXPPointsText;
     [Header("Upgrade system")]
     [SerializeField] private UpgradeOption _weaponSystem;
@@ -29,7 +29,6 @@ public class UpgradePanel : MonoBehaviour
     public void Back()
     {
         this.gameObject.SetActive(false);
-        AudioManager.instance.PlayAudioSFX("ButtonClick");
         ResetUpgrades(); 
     }
 
@@ -37,7 +36,6 @@ public class UpgradePanel : MonoBehaviour
     {
         if (!CheckPips(_weaponIndexPips))
         {
-            AudioManager.instance.PlayAudioSFX("Pip");
             _weaponIndexPips++;
             _weaponSystem.SetPipsActive(_weaponIndexPips);
             playerXPPoints -= 1;
@@ -54,7 +52,6 @@ public class UpgradePanel : MonoBehaviour
     {
         if (!CheckPips(_engineIndexPips))
         {
-            AudioManager.instance.PlayAudioSFX("Pip");
             _engineIndexPips++;
             _engineSystem.SetPipsActive(_engineIndexPips);
             playerXPPoints -= 1;
@@ -70,7 +67,6 @@ public class UpgradePanel : MonoBehaviour
     {
         if (!CheckPips(_shipIndexPips))
         {
-            AudioManager.instance.PlayAudioSFX("Pip");
             _shipIndexPips++;
             _shieldSystem.SetPipsActive(_shipIndexPips);
             playerXPPoints -= 1;
@@ -102,7 +98,6 @@ public class UpgradePanel : MonoBehaviour
     }
     public void StartGame()
     {
-        AudioManager.instance.PlayAudioSFX("StartGame");
         UIManager.UIManagerInstance.StartLevelOne(); 
     }
 }

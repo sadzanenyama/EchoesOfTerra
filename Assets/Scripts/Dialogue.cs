@@ -7,7 +7,6 @@ public class Dialogue : MonoBehaviour
 {
     public LevelDialogueSO levelDialogue;
 
-    public GameObject DialogueUI;
     public GameObject sideMessage;
     public Button continueButton;
     public float timeBtwCharacters = 0.05f;
@@ -63,8 +62,9 @@ public class Dialogue : MonoBehaviour
         {
             // All sentences have been shown, handle what happens next (e.g., start a new scene, etc.)
             Debug.Log("All messages displayed");
-            DialogueUI.SetActive(false);
+            gameObject.SetActive(false);
             PauseManager.Resume();
+            WaveSpawner.instance.WaveStart();
         }
     }
  
@@ -73,7 +73,7 @@ public class Dialogue : MonoBehaviour
         gameObject.SetActive(true);
         currentMessageIndex++;
         currentDialogueIndex = 0;
-        PauseManager.Pause();
+        PauseManager.Pause(false);
         StopAllCoroutines();  // Stop any previous coroutine to avoid overlapping
         StartCoroutine(TypeText(mainTextDisplay, levelDialogue.messages[currentMessageIndex].dialogue[0]));
     }

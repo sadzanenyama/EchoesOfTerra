@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class UIManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _fpsMarker; 
     public static UIManager UIManagerInstance { get; private set; }
     private CanvasGroup _gameCoverCanvasGroup;
+
+    public AudioMixer masterMixer;
 
     private void Awake()
     {
@@ -45,36 +48,17 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        
-        string startScreen = PlayerPrefs.GetString("StartScreen", "MainMenu");
+        float sfxVol, musicVol;
 
-       
-        if (startScreen == "SettingsPage")
-        {
-            SetAsActiveScreen(_settingsPage);
-        }
-        else if (startScreen == "CreditsPage")
-        {
-            SetAsActiveScreen(_creditsPage);
-        }
-        else if (startScreen == "LevelSelectionPage")
-        {
-            SetAsActiveScreen(_levelSelectionPage);
-        }
-        else if (startScreen == "TutorialPage")
-        {
-            SetAsActiveScreen(_mainMenuScreen);
-        }
-        else
-        {
-            PlayerPrefs.DeleteAll();
-            SetAsActiveScreen(_mainMenuScreen);
-        }
-        AudioManager.instance.PlayMusic("SpaceSounds");
+        sfxVol = PlayerPrefs.GetFloat("SFXVolume");
+        musicVol = PlayerPrefs.GetFloat("MusicVolume");
+
+        masterMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVol) * 20);
+        masterMixer.SetFloat("MusicVolume", Mathf.Log10(musicVol) * 20);
+
+        SetAsActiveScreen(_mainMenuScreen);
     }
 
-  
-  
 
     public bool FPSMarkerActive()
     {

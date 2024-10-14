@@ -1,4 +1,6 @@
 using Unity.VisualScripting;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpaceShipManager : MonoBehaviour
@@ -11,7 +13,6 @@ public class SpaceShipManager : MonoBehaviour
     private bool isDead = false; 
     public delegate void DamageAction();
     public event DamageAction OnTakeDamage;
-    public PauseMenuManager pauseManager; 
 
     bool isPlayer = false;
     bool playedShieldBreakSound;
@@ -68,8 +69,7 @@ public class SpaceShipManager : MonoBehaviour
 
         if(isPlayer)
         {
-            pauseManager.Pause();
-            IngameUI.Instance.GameOverPanel(); 
+           IngameUI.Instance.StartCoroutine(IngameUI.Instance.GameOver());
         }
 
         gameObject.SetActive(false);

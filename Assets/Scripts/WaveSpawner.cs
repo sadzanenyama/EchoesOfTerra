@@ -24,6 +24,8 @@ public class WaveSpawner : MonoBehaviour
     {
         instance = this;
 
+        state = SpawnState.BetweenWave;
+
         spawnPoints = new Transform[spawnPointParent.childCount];
 
         for(int i = 0; i < spawnPoints.Length; i++)
@@ -32,18 +34,28 @@ public class WaveSpawner : MonoBehaviour
         }
 
         Dialogue.instance.DisplayMainMessage();
+        shownDialogue = true;
     }
 
     private void Update()
     {
-        /*if(wavesToShowDialogue.Contains(waveNumber) && !shownDialogue)
-        {
-            Dialogue.instance.DisplayMainMessage();
-            shownDialogue = true;
-        }*/
 
         if (state == SpawnState.BetweenWave)
+        {
+            if (wavesToShowDialogue.Contains(waveNumber))
+            {
+                if(!shownDialogue)
+                {
+                    StartCoroutine(ShowDialogue());
+                    shownDialogue = true;
+                }
+            }
+            else
+            {
+                WaveStart();
+            }
             return;
+        }
 
         if (state == SpawnState.Waiting)
         {
@@ -58,20 +70,24 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
+    IEnumerator ShowDialogue()
+    {
+        yield return new WaitForSeconds(2f);
+        Dialogue.instance.DisplayMainMessage();
+    }
+
     void WaveCompleted()
     {
+        waveNumber++;
         state = SpawnState.BetweenWave;
         if (waveNumber >= waveData.waves.Length)
         {
             Debug.Log("Finished level");
-            return;
         }
     }
 
     public void WaveStart()
     {
-       // shownDialogue = false;
-        waveNumber++;
         StartCoroutine(SpawnWave(waveData.waves[waveNumber]));
     }
 
@@ -101,6 +117,8 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave(WaveSO wave)
     {
         state = SpawnState.Spawning;
+
+        shownDialogue = false;
 
         for (int i2 = 0; i2 < wave.groups.Length; i2++)
         {

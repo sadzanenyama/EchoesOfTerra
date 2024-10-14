@@ -14,14 +14,14 @@ public class SettingsPage : MonoBehaviour
     [SerializeField] private TMP_Dropdown _graphicsDrop;
     [SerializeField] private Toggle _vsyncToggle;
     [SerializeField] private Toggle _fpsToggle;
-    public AudioMixer music;
-    public AudioMixer sfx;
+    public AudioMixer masterMixer;
+
     public void Start()
     {
+        _sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+        Debug.Log("Setting slider " + PlayerPrefs.GetFloat("SFXVolume"));
         _musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-        _sfxSlider.value = PlayerPrefs.GetFloat("AudioVolume");
-        ChangeSoundEffectsVolume();
-        ChangeMusicVolume();
+
         _resDropDown.ClearOptions();
         if(ResoultionManager.ResInstance.GetScreenOptions() != null)
         {
@@ -50,18 +50,9 @@ public class SettingsPage : MonoBehaviour
     }
     public void Back()
     {
-        AudioManager.instance.PlayAudioSFX("ButtonClick");
         UIManager.UIManagerInstance.SetMainMenuPage();
-    }
-
-    public void ChangeMusicVolume()
-    {
-        AudioManager.instance.AdjustMusicVolume(_musicSlider.value);
-    }
-
-    public void ChangeSoundEffectsVolume()
-    {
-        AudioManager.instance.AdjustSFXVolume(_sfxSlider.value);
+        PlayerPrefs.SetFloat("SFXVolume", _sfxSlider.value);
+        PlayerPrefs.SetFloat("MusicVolume", _musicSlider.value);
     }
 
     public void SetResValue() 
@@ -69,16 +60,15 @@ public class SettingsPage : MonoBehaviour
         ResoultionManager.ResInstance.SetResolution(_resDropDown.value);
     }
 
-    public void SetVolumeMixer(float volume)
+    public void SetSFXVolume(float volume)
     {
-        PlayerPrefs.SetFloat("MusicVolume", volume);
-        music.SetFloat("Volume", Mathf.Log10(volume) * 20); 
+        masterMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
     }
-    public void SetVolumeSFX(float volume)
-    {
-        PlayerPrefs.SetFloat("AudioVolume", volume );
-        sfx.SetFloat("VolumeSFX", Mathf.Log10(volume) * 20);
+    public void SetMusicVolume(float volume)
+    {      
+        masterMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
     }
+
     public void VSYNC()
     {
         QualitySettings.vSyncCount = _vsyncToggle.isOn ? 1 :0;

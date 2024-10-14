@@ -6,7 +6,6 @@ public class LevelSelectPage : MonoBehaviour
 {
    public void Back()
     {
-        AudioManager.instance.PlayAudioSFX("ButtonClick");
         UIManager.UIManagerInstance.SetMainMenuPage();
     }
 

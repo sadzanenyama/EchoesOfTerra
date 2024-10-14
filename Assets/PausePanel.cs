@@ -6,13 +6,10 @@ using UnityEngine.SceneManagement;
 public class PausePanel : MonoBehaviour
 {
   
-        public void MainMenu()
-        {
-            PlayerPrefs.SetString("StartScreen", "MainMenu");
-            PlayerPrefs.Save();
-            SceneManager.LoadScene("Main");
-
-        }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main");
+    }
 
     public void ExitGame()
     {

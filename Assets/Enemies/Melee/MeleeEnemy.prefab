@@ -276,8 +276,8 @@ MonoBehaviour:
   shipStats: {fileID: 11400000, guid: 15551aa19c1e24848a242de6d57d5199, type: 2}
   currentHealth: 100
   currentShield: 100
-  isDead: 0
   pauseManager: {fileID: 0}
+  shieldBreakSound: {fileID: 0}
 --- !u!195 &5288218312910010633
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ AudioSource:
   m_GameObject: {fileID: 8175491573009077134}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 7dbaae417842977408e5f18f621db24c,
+  OutputAudioMixerGroup: {fileID: -5242154947228899041, guid: 30d91de228102164aa3645d1f8fabb8c,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1

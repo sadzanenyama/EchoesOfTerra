@@ -21,3 +21,13 @@ MonoBehaviour:
     - "We\u2019ve been getting reports of attacks on this mining colony. Probably
       just pirates."
     - Just keep an eye out for any suspicious ships.
+  - messengerName: High Admiral
+    messengerSprite: {fileID: 21300000, guid: a1d14e87d89d17642b464292867da3e7, type: 3}
+    dialogue:
+    - "It\u2019s getting worse. This isn\u2019t just a pirate attack."
+    - I've just got reports we have incoming attacks on our other colonies!
+  - messengerName: High Admiral
+    messengerSprite: {fileID: 21300000, guid: a1d14e87d89d17642b464292867da3e7, type: 3}
+    dialogue:
+    - "This is a full scale invasion. There\u2019s hundreds of ships\u2026 "
+    - Where the hell are they all coming from?!

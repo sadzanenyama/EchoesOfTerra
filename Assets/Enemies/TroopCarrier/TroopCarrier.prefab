@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2033921944744114630}
   - component: {fileID: 571646345635497408}
-  - component: {fileID: 3631251569317246374}
-  - component: {fileID: 5450076596876351857}
   - component: {fileID: -1559021179686194682}
+  - component: {fileID: -212109561517389393}
+  - component: {fileID: 4297160143113829603}
   m_Layer: 7
   m_Name: TroopCarrier
   m_TagString: Trooper
@@ -54,41 +54,6 @@ MonoBehaviour:
   currentHealth: 0
   currentShield: 0
   shieldBreakSound: {fileID: 0}
---- !u!195 &3631251569317246374
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4581891223412127919}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &5450076596876351857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4581891223412127919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 221b80d5f29b87c40ba8bd64fc07c960, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyStats: {fileID: 11400000, guid: d472423acf82e2c4797ae8818e850a03, type: 2}
 --- !u!82 &-1559021179686194682
 AudioSource:
   m_ObjectHideFlags: 0
@@ -98,7 +63,7 @@ AudioSource:
   m_GameObject: {fileID: 4581891223412127919}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 7dbaae417842977408e5f18f621db24c,
+  OutputAudioMixerGroup: {fileID: -5242154947228899041, guid: 30d91de228102164aa3645d1f8fabb8c,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
@@ -186,6 +151,46 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-212109561517389393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581891223412127919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97680b33aad92f4eaae2456f3f43b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: d472423acf82e2c4797ae8818e850a03, type: 2}
+--- !u!54 &4297160143113829603
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581891223412127919}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &7552744056793054562
 GameObject:
   m_ObjectHideFlags: 0
