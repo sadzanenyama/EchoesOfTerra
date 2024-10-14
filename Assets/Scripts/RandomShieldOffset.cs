@@ -10,12 +10,11 @@ public class RandomShieldOffset : MonoBehaviour
 
     public float shieldHealth;
 
-    private SpaceShipManager spaceShipHealth;
+    [SerializeField] private SpaceShipManager spaceShipHealth;
 
     void Start()
     {
-        spaceShipHealth = transform.root.GetComponent<SpaceShipManager>();
-
+     
         // Get the material from the renderer
         if (targetRenderer == null)
         {
