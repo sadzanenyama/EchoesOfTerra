@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Dialogue : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Dialogue : MonoBehaviour
     public int currentDialogueIndex;
 
     public static Dialogue instance;
+    public Action OnDialogueComplete;
 
 
     private void Awake()
@@ -64,7 +66,8 @@ public class Dialogue : MonoBehaviour
             Debug.Log("All messages displayed");
             gameObject.SetActive(false);
             PauseManager.Resume();
-            WaveSpawner.instance.WaveStart();
+            if(WaveSpawner.instance != null) WaveSpawner.instance.WaveStart();
+            OnDialogueComplete?.Invoke();
         }
     }
  
