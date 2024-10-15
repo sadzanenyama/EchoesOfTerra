@@ -77,19 +77,19 @@ public class LevelSelectPage : MonoBehaviour
 
     public void StartLevelOne()
     {
-        PlayerPrefs.SetString("CurrentLevel", "LevelOne");
+        UIManager.UIManagerInstance.LevelToLoad = "Cutscene";
         UIManager.UIManagerInstance.ShowUpgradePanel();
     }
 
     public void StartLevelNewTerra()
     {
-        PlayerPrefs.SetString("CurrentLevel", "NewTerra");
+        UIManager.UIManagerInstance.LevelToLoad = "NewTerra";
         UIManager.UIManagerInstance.ShowUpgradePanel();
     }
 
     public void StartLevelOldEarth()
     {
-        PlayerPrefs.SetString("CurrentLevel", "OldEarth");
+        UIManager.UIManagerInstance.LevelToLoad = "OldEarth";
         UIManager.UIManagerInstance.ShowUpgradePanel();
     }
 }

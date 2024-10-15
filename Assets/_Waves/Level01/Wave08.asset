@@ -10,28 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ddf5b5c22eb8d646b934476c58c440f, type: 3}
-  m_Name: Wave03
+  m_Name: Wave08
   m_EditorClassIdentifier: 
   groups:
   - enemyToSpawn: {fileID: 4581891223412127919, guid: f4a967fc6975cc74aa47ae7bd5a85fd9,
       type: 3}
     spawnRate: 1
-    numToSpawn: 2
-    delayToNextGroup: 1
-    spawnPosition: 1
-  - enemyToSpawn: {fileID: 8124741377779489873, guid: 00075962882e8cc4280d105fd3bb5b16,
-      type: 3}
-    spawnRate: 1
-    numToSpawn: 1
-    delayToNextGroup: 1
-    spawnPosition: 4
-  - enemyToSpawn: {fileID: 8124741377779489873, guid: 00075962882e8cc4280d105fd3bb5b16,
-      type: 3}
-    spawnRate: 1
     numToSpawn: 1
     delayToNextGroup: 1
     spawnPosition: 0
-  - enemyToSpawn: {fileID: 8124741377779489873, guid: 00075962882e8cc4280d105fd3bb5b16,
+  - enemyToSpawn: {fileID: 4581891223412127919, guid: f4a967fc6975cc74aa47ae7bd5a85fd9,
+      type: 3}
+    spawnRate: 1
+    numToSpawn: 1
+    delayToNextGroup: 1
+    spawnPosition: 1
+  - enemyToSpawn: {fileID: 4581891223412127919, guid: f4a967fc6975cc74aa47ae7bd5a85fd9,
       type: 3}
     spawnRate: 1
     numToSpawn: 1
@@ -40,24 +34,48 @@ MonoBehaviour:
   - enemyToSpawn: {fileID: 8124741377779489873, guid: 00075962882e8cc4280d105fd3bb5b16,
       type: 3}
     spawnRate: 1
-    numToSpawn: 1
-    delayToNextGroup: 1
-    spawnPosition: 6
-  - enemyToSpawn: {fileID: 8124741377779489873, guid: 00075962882e8cc4280d105fd3bb5b16,
+    numToSpawn: 4
+    delayToNextGroup: 2
+    spawnPosition: 0
+  - enemyToSpawn: {fileID: 4581891223412127919, guid: f4a967fc6975cc74aa47ae7bd5a85fd9,
       type: 3}
     spawnRate: 1
     numToSpawn: 1
     delayToNextGroup: 1
     spawnPosition: 3
+  - enemyToSpawn: {fileID: 4581891223412127919, guid: f4a967fc6975cc74aa47ae7bd5a85fd9,
+      type: 3}
+    spawnRate: 1
+    numToSpawn: 1
+    delayToNextGroup: 1
+    spawnPosition: 4
+  - enemyToSpawn: {fileID: 4581891223412127919, guid: f4a967fc6975cc74aa47ae7bd5a85fd9,
+      type: 3}
+    spawnRate: 1
+    numToSpawn: 1
+    delayToNextGroup: 2
+    spawnPosition: 5
+  - enemyToSpawn: {fileID: 4581891223412127919, guid: f4a967fc6975cc74aa47ae7bd5a85fd9,
+      type: 3}
+    spawnRate: 1
+    numToSpawn: 1
+    delayToNextGroup: 2
+    spawnPosition: 6
+  - enemyToSpawn: {fileID: 4581891223412127919, guid: f4a967fc6975cc74aa47ae7bd5a85fd9,
+      type: 3}
+    spawnRate: 1
+    numToSpawn: 1
+    delayToNextGroup: 2
+    spawnPosition: 7
   - enemyToSpawn: {fileID: 8175491573009077134, guid: f4ed6b36c8e0ab04699017fe77052b0f,
       type: 3}
     spawnRate: 1
-    numToSpawn: 2
-    delayToNextGroup: 1
-    spawnPosition: 4
+    numToSpawn: 4
+    delayToNextGroup: 2
+    spawnPosition: 2
   - enemyToSpawn: {fileID: 8175491573009077134, guid: f4ed6b36c8e0ab04699017fe77052b0f,
       type: 3}
-    spawnRate: 0.25
-    numToSpawn: 2
-    delayToNextGroup: 1
-    spawnPosition: 2
+    spawnRate: 1
+    numToSpawn: 4
+    delayToNextGroup: 2
+    spawnPosition: 6

@@ -14,9 +14,9 @@ public class ApplyUpgrades : MonoBehaviour
 
     private void Awake()
     {
-        weaponUpgrades = PlayerPrefs.GetInt("WeaponUpgrades", 1);
-        engineUpgrades = PlayerPrefs.GetInt("EngineUpgrades", 1);
-        shipUpgrades = PlayerPrefs.GetInt("ShieldUpgrades", 1);
+       // weaponUpgrades = PlayerPrefs.GetInt("WeaponUpgrades", 1);
+      //  engineUpgrades = PlayerPrefs.GetInt("EngineUpgrades", 1);
+       // shipUpgrades = PlayerPrefs.GetInt("ShieldUpgrades", 1);
 
         GameObject player = GameObject.FindWithTag("Player");
 

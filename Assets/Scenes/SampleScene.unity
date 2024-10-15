@@ -2770,6 +2770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769639520364386266, guid: 3357da4e251249347adf36dc0384ed3e,
         type: 3}
+      propertyPath: itemsToPool.Array.data[3].shouldExpand
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769639520364386266, guid: 3357da4e251249347adf36dc0384ed3e,
+        type: 3}
       propertyPath: itemsToPool.Array.data[4].amountToPool
       value: 1
       objectReference: {fileID: 0}
@@ -2813,7 +2818,7 @@ PrefabInstance:
     - target: {fileID: 5509940247875859724, guid: 3357da4e251249347adf36dc0384ed3e,
         type: 3}
       propertyPath: wavesToShowDialogue.Array.size
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5509940247875859724, guid: 3357da4e251249347adf36dc0384ed3e,
         type: 3}
@@ -2829,6 +2834,31 @@ PrefabInstance:
         type: 3}
       propertyPath: wavesToShowDialogue.Array.data[2]
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509940247875859724, guid: 3357da4e251249347adf36dc0384ed3e,
+        type: 3}
+      propertyPath: wavesToShowDialogue.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509940247875859724, guid: 3357da4e251249347adf36dc0384ed3e,
+        type: 3}
+      propertyPath: wavesToShowDialogue.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509940247875859724, guid: 3357da4e251249347adf36dc0384ed3e,
+        type: 3}
+      propertyPath: wavesToShowDialogue.Array.data[5]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509940247875859724, guid: 3357da4e251249347adf36dc0384ed3e,
+        type: 3}
+      propertyPath: wavesToShowDialogue.Array.data[6]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509940247875859724, guid: 3357da4e251249347adf36dc0384ed3e,
+        type: 3}
+      propertyPath: wavesToShowDialogue.Array.data[7]
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7237513786122320824, guid: 3357da4e251249347adf36dc0384ed3e,
         type: 3}
@@ -3545,9 +3575,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04071c0e9ba8f34a9d6c570a999f4fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponUpgrades: 1
-  engineUpgrades: 1
-  shipUpgrades: 1
+  weaponUpgrades: 2
+  engineUpgrades: 2
+  shipUpgrades: 2
   movementUpgradesStats:
   - {fileID: 11400000, guid: e03016ac9d0c31a478c418a7b9e9752c, type: 2}
   - {fileID: 11400000, guid: b61ece764fdbb1f46864cb8e7b29dbc3, type: 2}

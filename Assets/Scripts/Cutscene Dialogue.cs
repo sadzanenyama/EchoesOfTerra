@@ -9,7 +9,7 @@ public class CutsceneDialogue : MonoBehaviour
     public float typeDelay = 0.05f;  // Delay between each letter
     public float waitTimeBetweenMessages = 0.5f;  // Delay between each message
 
-   
+   [TextArea(3,5)]
     public string[] SceneOne;
 
     private int currentMessageIndex; // Tracks which sentence is currently displayed

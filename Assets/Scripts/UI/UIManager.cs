@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
 
     public AudioMixer masterMixer;
 
+    public string LevelToLoad;
+
     private void Awake()
     {
         if (UIManagerInstance != null && UIManagerInstance != this)
@@ -93,9 +95,9 @@ public class UIManager : MonoBehaviour
         _fpsMarker.gameObject.SetActive(value);
     }
 
-    IEnumerator LoadSceneAsync(int sceneId)
+    IEnumerator LoadSceneAsync(string sceneName)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         Image loadingBar = _loadingScreen.GetComponent<LoadingScreen>().GetLoadingBar();
         SetAsActiveScreen(_loadingScreen);
         while(!operation.isDone) 
@@ -139,10 +141,10 @@ public class UIManager : MonoBehaviour
 
     public void StartTutorial()
     {
-        StartCoroutine(LoadSceneAsync(2));
+        StartCoroutine(LoadSceneAsync("Tutorial"));
     }
-    public void StartLevelOne()
+    public void StartLevel()
     {
-        StartCoroutine(LoadSceneAsync(0)); 
+        StartCoroutine(LoadSceneAsync(LevelToLoad)); 
     }
 }

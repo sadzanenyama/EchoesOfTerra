@@ -7,7 +7,7 @@ public class UpgradePanel : MonoBehaviour
 {
     private int maxUpgradePips = 5; 
     [Header("Visual Elements")]
-    private int playerXPPoints = 3;
+    private int playerXPPoints = 0;
     public TextMeshProUGUI userXPPointsText;
     [Header("Upgrade system")]
     [SerializeField] private UpgradeOption _weaponSystem;
@@ -23,6 +23,10 @@ public class UpgradePanel : MonoBehaviour
     private int _shipIndexPips = 1;
     private int _engineIndexPips = 1;
 
+    private int currentXPAssigned;
+
+    string LevelToLoad;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -34,11 +38,15 @@ public class UpgradePanel : MonoBehaviour
     public void SetLevelOneXP()
     {
         playerXPPoints = 4;
+        currentXPAssigned = 4;
+        userXPPointsText.text = playerXPPoints.ToString() + "XP";
     }
 
     public void SetLevelTwoXP()
     {
         playerXPPoints = 9;
+        currentXPAssigned = 9;
+        userXPPointsText.text = playerXPPoints.ToString() + "XP";
     }
 
     public void OnEnable()
@@ -115,17 +123,17 @@ public class UpgradePanel : MonoBehaviour
     
     public void ResetUpgrades()
     {
-        userXPPointsText.text = playerXPPoints.ToString() + "XP";
         _engineSystem.ResetPips();
         _weaponSystem.ResetPips();
         _shieldSystem.ResetPips();
-        playerXPPoints = 3;
+        playerXPPoints = currentXPAssigned;
         _weaponIndexPips = 1;
         _shipIndexPips = 1;
         _engineIndexPips = 1;
         PlayerPrefs.SetInt("EngineUpgrades", 1);
         PlayerPrefs.SetInt("ShieldUpgrades", 1);
         PlayerPrefs.SetInt("WeaponUpgrades", 1);
+        userXPPointsText.text = playerXPPoints.ToString() + "XP";
     }
 
     public bool CheckPips(int value)
@@ -134,6 +142,6 @@ public class UpgradePanel : MonoBehaviour
     }
     public void StartGame()
     {
-        UIManager.UIManagerInstance.StartLevelOne(); 
+        UIManager.UIManagerInstance.StartLevel(); 
     }
 }

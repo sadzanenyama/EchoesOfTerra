@@ -36,13 +36,14 @@ public class MeleeExplode : MonoBehaviour
     }
 
     void StartExplode()
-    {
-        explode = true;
+    {       
         StartCoroutine(Explode());
     }
 
     IEnumerator Explode()
-    {    
+    {
+        explode = true;
+
         yield return new WaitForSeconds(enemyStats.fuseTime);
         GameObject explosion = ObjectPooler.Singleton.GetPooledObjectByTag("Explosion");
         explosion.GetComponent<ExplosionDamage>().Explode(explosionPosition.position);

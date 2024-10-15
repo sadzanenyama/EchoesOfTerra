@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a978bb1772558e42ab09a6d01e8085b, type: 3}
   m_Name: Trooper
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  movementSpeed: 5
   speedVariation: 1
   turningSpeed: 120
   acceleration: 10
