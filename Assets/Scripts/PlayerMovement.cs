@@ -7,13 +7,14 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
 
-    [Header("Attributes")]
-    public float acceleration = 10f;
-    public float maxSpeed = 5f;
-    public float drag = 2f;
-    public float dashMultiplier = 2f;
-    public float dashDuration;
-    public float dashHeat = 10f;
+    public PlayerMovementSO movementStats;
+
+    private float acceleration = 10f;
+    private float maxSpeed = 5f;
+    private float drag = 2f;
+    private float dashMultiplier = 2f;
+    private const float dashDuration = 0.1f;
+    private const float dashHeat = 40f;
 
     private float originalAcceleration;
     private float originalMaxSpeed;
@@ -25,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        acceleration = movementStats.accleration;
+        maxSpeed = movementStats.maxSpeed;
+        drag = movementStats.drag;
+        dashMultiplier = movementStats.dashMultiplier;
+
         rb = GetComponent<Rigidbody>();
         rb.drag = drag; // Set drag for deceleration
         rb.freezeRotation = true;

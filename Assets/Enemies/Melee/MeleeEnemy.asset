@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a978bb1772558e42ab09a6d01e8085b, type: 3}
   m_Name: MeleeEnemy
   m_EditorClassIdentifier: 
-  movementSpeed: 9
-  speedVariation: 1
+  movementSpeed: 16
+  speedVariation: 8
   turningSpeed: 120
   acceleration: 10
   stoppingDistance: 7
-  explodeDistance: 9
+  explodeDistance: 10
   fuseTime: 0.5
-  maxExplosionDamage: 110
+  maxExplosionDamage: 115
   damageFallOff: 0.4
   deadMelee: {fileID: 8300000, guid: a70fd86ebb5016a4bb7d1edb6b6ac8d7, type: 3}
   shootDistance: 0

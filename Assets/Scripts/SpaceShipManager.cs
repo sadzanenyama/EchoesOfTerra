@@ -20,7 +20,7 @@ public class SpaceShipManager : MonoBehaviour
     public AudioClip shieldBreakSound;
     private AudioSource audioSource;
 
-    private void Awake()
+    private void Start()
     {
         isPlayer = gameObject.tag == "Player";
         currentHealth = shipStats.hullHealth;
@@ -46,12 +46,6 @@ public class SpaceShipManager : MonoBehaviour
         if (isDead)
             return;
 
-        if (currentHealth <= 0)
-        {
-            isDead = true;
-            Die();          
-        }
-
         if (currentShield > 0)
         {
             currentShield -= damage;
@@ -61,6 +55,12 @@ public class SpaceShipManager : MonoBehaviour
             currentHealth -= damage;
         }
         timeTilShieldRecharge = shipStats.shieldRechargeDelay;
+
+        if (currentHealth <= 0)
+        {
+            isDead = true;
+            Die();          
+        }
 
         OnTakeDamage?.Invoke();
     }

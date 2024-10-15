@@ -81,7 +81,7 @@ public class WaveSpawner : MonoBehaviour
     {
         waveNumber++;
         state = SpawnState.BetweenWave;
-        if (waveNumber >= waveData.waves.Length)
+        if (waveNumber >= waveData.waves.Length - 1)
         {
             enemyAttacksComplete.Invoke(); 
             Debug.Log("Finished level");

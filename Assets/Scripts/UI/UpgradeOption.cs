@@ -19,7 +19,7 @@ public class UpgradeOption : MonoBehaviour
     }
     public void ResetPips()
     {
-        for (int i = 0; i < pips.Count; i++)
+        for (int i = 1; i < pips.Count; i++)
         {
             pips[i].PipActivate(false);
         }

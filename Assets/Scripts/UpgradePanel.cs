@@ -5,26 +5,46 @@ using UnityEngine;
 
 public class UpgradePanel : MonoBehaviour
 {
-    [Header("UserWeapons")]
-    public WeaponSO weaponUpgrades;
-    public ShipSO ship;
-    public int userXPPoints;
-    private int maxUpgradePips = 10; 
+    private int maxUpgradePips = 5; 
     [Header("Visual Elements")]
-    private int playerXPPoints = 0;
+    private int playerXPPoints = 3;
     public TextMeshProUGUI userXPPointsText;
     [Header("Upgrade system")]
     [SerializeField] private UpgradeOption _weaponSystem;
     [SerializeField] private UpgradeOption _engineSystem;
     [SerializeField] private UpgradeOption _shieldSystem;
-    [SerializeField] private GameObject _noMoreUpgrades; 
+    [SerializeField] private GameObject _noMoreUpgrades;
 
-    private int _weaponIndexPips = 0;
-    private int _shipIndexPips = 0;
-    private int _engineIndexPips = 0;
+    [SerializeField] private AudioClip upgradeSuccess;
+    [SerializeField] private AudioClip upgradeFailed;
+    private AudioSource audioSource;
+
+    private int _weaponIndexPips = 1;
+    private int _shipIndexPips = 1;
+    private int _engineIndexPips = 1;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        _engineSystem.SetPipsActive(_weaponIndexPips);
+        _weaponSystem.SetPipsActive(_shipIndexPips);
+        _shieldSystem.SetPipsActive(_engineIndexPips);
+    }
+
+    public void SetLevelOneXP()
+    {
+        playerXPPoints = 4;
+    }
+
+    public void SetLevelTwoXP()
+    {
+        playerXPPoints = 9;
+    }
+
     public void OnEnable()
     {
         userXPPointsText.text = playerXPPoints.ToString() + "XP";
+        ResetUpgrades();
     }
     public void Back()
     {
@@ -34,15 +54,19 @@ public class UpgradePanel : MonoBehaviour
 
     public void IncreaseWeapon()
     {
-        if (!CheckPips(_weaponIndexPips))
+        if (!CheckPips(_weaponIndexPips) && playerXPPoints > 0)
         {
             _weaponIndexPips++;
             _weaponSystem.SetPipsActive(_weaponIndexPips);
             playerXPPoints -= 1;
             userXPPointsText.text = playerXPPoints.ToString() + "XP";
+            audioSource.PlayOneShot(upgradeSuccess, 0.3f);
+            PlayerPrefs.SetInt("WeaponUpgrades", _weaponIndexPips);
+            Debug.Log("Setting weapon");
         }
         else
         {
+            audioSource.PlayOneShot(upgradeFailed, 0.3f);
             // display cannot upgrade more 
             return;
         }
@@ -50,30 +74,38 @@ public class UpgradePanel : MonoBehaviour
 
     public void IncreaseEngine()
     {
-        if (!CheckPips(_engineIndexPips))
+        if (!CheckPips(_engineIndexPips) && playerXPPoints > 0)
         {
             _engineIndexPips++;
             _engineSystem.SetPipsActive(_engineIndexPips);
             playerXPPoints -= 1;
             userXPPointsText.text = playerXPPoints.ToString() + "XP";
+            audioSource.PlayOneShot(upgradeSuccess, 0.3f);
+            PlayerPrefs.SetInt("EngineUpgrades", _engineIndexPips);
+            Debug.Log("Setting engine");
         }
         else
         {
+            audioSource.PlayOneShot(upgradeFailed, 0.3f);
             // display cannot upgrade more 
             return; 
         }
     }
     public void IncreaseShield()
     {
-        if (!CheckPips(_shipIndexPips))
+        if (!CheckPips(_shipIndexPips) && playerXPPoints > 0)
         {
             _shipIndexPips++;
             _shieldSystem.SetPipsActive(_shipIndexPips);
             playerXPPoints -= 1;
             userXPPointsText.text = playerXPPoints.ToString() + "XP";
+            audioSource.PlayOneShot(upgradeSuccess, 0.3f);
+            PlayerPrefs.SetInt("ShieldUpgrades", _shipIndexPips);
+            Debug.Log("Setting shield");
         }
         else
         {
+            audioSource.PlayOneShot(upgradeFailed, 0.3f);
             // display cannot upgrade more 
             return;
         }
@@ -86,10 +118,14 @@ public class UpgradePanel : MonoBehaviour
         userXPPointsText.text = playerXPPoints.ToString() + "XP";
         _engineSystem.ResetPips();
         _weaponSystem.ResetPips();
-        _shieldSystem.ResetPips();  
-        _weaponIndexPips = 0;
-        _shipIndexPips = 0;
-        _engineIndexPips = 0;
+        _shieldSystem.ResetPips();
+        playerXPPoints = 3;
+        _weaponIndexPips = 1;
+        _shipIndexPips = 1;
+        _engineIndexPips = 1;
+        PlayerPrefs.SetInt("EngineUpgrades", 1);
+        PlayerPrefs.SetInt("ShieldUpgrades", 1);
+        PlayerPrefs.SetInt("WeaponUpgrades", 1);
     }
 
     public bool CheckPips(int value)

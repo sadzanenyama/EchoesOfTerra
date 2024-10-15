@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b38fe751d39359438b3e179c284aed4, type: 3}
+  m_Name: PlayerWeaponLvl5
+  m_EditorClassIdentifier: 
+  projectileSpeed: 50
+  fireRate: 8
+  accuracy: 5
+  damage: 25
+  heatPerShot: 10
+  coolRate: 45
+  shootSound: {fileID: 8300000, guid: 8ab2170bd3740284799211eb56a69e49, type: 3}
+  overheatSound: {fileID: 8300000, guid: a0b31d4600635d244b75d100d693c255, type: 3}

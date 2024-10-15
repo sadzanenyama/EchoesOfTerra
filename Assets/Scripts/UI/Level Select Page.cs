@@ -12,15 +12,11 @@ public class LevelSelectPage : MonoBehaviour
     [SerializeField] private GameObject moralChoice; 
 
 
-    private void Start()
+  /*  private void Start()
     {
         Dialogue.instance.OnDialogueComplete += HandleDialogueEnd;
-    }
+    }*/
 
-    private void OnDestroy()
-    {
-        Dialogue.instance.OnDialogueComplete -= HandleDialogueEnd;
-    }
     public void OnEnable()
     {
         moralChoice.SetActive(false);
@@ -73,10 +69,7 @@ public class LevelSelectPage : MonoBehaviour
         levelTwoA.SetLockedState(false);
 
     }
-    public void Update()
-    {
-       
-    }
+
     public void Back()
     {
         UIManager.UIManagerInstance.SetMainMenuPage();
@@ -88,5 +81,15 @@ public class LevelSelectPage : MonoBehaviour
         UIManager.UIManagerInstance.ShowUpgradePanel();
     }
 
+    public void StartLevelNewTerra()
+    {
+        PlayerPrefs.SetString("CurrentLevel", "NewTerra");
+        UIManager.UIManagerInstance.ShowUpgradePanel();
+    }
 
+    public void StartLevelOldEarth()
+    {
+        PlayerPrefs.SetString("CurrentLevel", "OldEarth");
+        UIManager.UIManagerInstance.ShowUpgradePanel();
+    }
 }
