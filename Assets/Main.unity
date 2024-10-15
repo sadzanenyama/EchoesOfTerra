@@ -937,7 +937,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4065
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1776,12 +1776,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 428589278}
   - {fileID: 1085319993}
   - {fileID: 1686676305}
   - {fileID: 1993003681}
   - {fileID: 295544652}
   - {fileID: 1707046249}
+  - {fileID: 428589278}
   m_Father: {fileID: 1976878096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2133,6 +2133,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7209966049629120355, guid: 63d358b7c3f7c8c4caed2dcdbd0c827e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.078598
       objectReference: {fileID: 0}
     - target: {fileID: 9162157707045900456, guid: 63d358b7c3f7c8c4caed2dcdbd0c827e,
         type: 3}
@@ -2958,7 +2963,7 @@ Canvas:
   m_GameObject: {fileID: 1976878092}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
