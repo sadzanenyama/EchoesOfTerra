@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class WaveSpawner : MonoBehaviour
     public enum SpawnState { Spawning, Waiting, BetweenWave};
     public SpawnState state = SpawnState.BetweenWave;
     [SerializeField] private WaveMasterSO waveData;
-
+    public Action enemyAttacksComplete; 
     public int waveNumber;
 
     protected float searchCountdown = 1f;
@@ -82,6 +83,7 @@ public class WaveSpawner : MonoBehaviour
         state = SpawnState.BetweenWave;
         if (waveNumber >= waveData.waves.Length)
         {
+            enemyAttacksComplete.Invoke(); 
             Debug.Log("Finished level");
         }
     }

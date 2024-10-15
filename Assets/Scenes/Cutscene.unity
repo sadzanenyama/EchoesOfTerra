@@ -1536,22 +1536,22 @@ PrefabInstance:
     - target: {fileID: 2189236879276878376, guid: 62b531e00a0fca64690df99786c1473d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.35046583
       objectReference: {fileID: 0}
     - target: {fileID: 2189236879276878376, guid: 62b531e00a0fca64690df99786c1473d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2189236879276878376, guid: 62b531e00a0fca64690df99786c1473d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.93657553
       objectReference: {fileID: 0}
     - target: {fileID: 2189236879276878376, guid: 62b531e00a0fca64690df99786c1473d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2189236879276878376, guid: 62b531e00a0fca64690df99786c1473d,
         type: 3}
@@ -1561,7 +1561,7 @@ PrefabInstance:
     - target: {fileID: 2189236879276878376, guid: 62b531e00a0fca64690df99786c1473d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 138.968
       objectReference: {fileID: 0}
     - target: {fileID: 2189236879276878376, guid: 62b531e00a0fca64690df99786c1473d,
         type: 3}
@@ -1581,6 +1581,11 @@ PrefabInstance:
     - target: {fileID: 3496431499363242485, guid: 62b531e00a0fca64690df99786c1473d,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689283633081719407, guid: 62b531e00a0fca64690df99786c1473d,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5459804361621345537, guid: 62b531e00a0fca64690df99786c1473d,
@@ -2511,10 +2516,12 @@ PlayableDirector:
     value: {fileID: 506793347}
   - key: {fileID: -6191711531662590904, guid: 39e08071d5fba0644a9573c8b4e830dd, type: 2}
     value: {fileID: 1958125845}
-  - key: {fileID: -1031458008669385850, guid: 39e08071d5fba0644a9573c8b4e830dd, type: 2}
-    value: {fileID: 1212817197}
   - key: {fileID: 316196046951174220, guid: 39e08071d5fba0644a9573c8b4e830dd, type: 2}
     value: {fileID: 1566649301}
+  - key: {fileID: -4926659312269582170, guid: 39e08071d5fba0644a9573c8b4e830dd, type: 2}
+    value: {fileID: 1212817197}
+  - key: {fileID: 184977629319101063, guid: 39e08071d5fba0644a9573c8b4e830dd, type: 2}
+    value: {fileID: 1212817196}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1813908559

@@ -14,7 +14,7 @@ public class IngameUI : MonoBehaviour
     [SerializeField] private GameObject _statsPanel;
     [SerializeField] TextMeshProUGUI _planetPopulationText;
     [SerializeField] private GameObject overheatText;
-
+    [SerializeField] private bool endOfLevelOneDialogue; 
     [SerializeField] private TextMeshProUGUI waveText;
 
     private SpaceShipManager player;
@@ -23,7 +23,7 @@ public class IngameUI : MonoBehaviour
     public int populationPlanet = 100; // this may need to change based on the scene we are in 
     private WeaponManager playerWeapon;
     private SpaceShipManager playerShip;
-
+   
   
 
     public static IngameUI Instance { get; private set; }
@@ -52,11 +52,43 @@ public class IngameUI : MonoBehaviour
             Instance = this;
         }
     }
+
+  
+
+    private void OnDisable()
+    {
+        // Unsubscribe from the event to avoid memory leaks
+        if (WaveSpawner.instance != null)
+        {
+            WaveSpawner.instance.enemyAttacksComplete -= OnEnemyAttacksComplete;
+        }
+    }
     public void Start()
     {
+        WaveSpawner.instance.enemyAttacksComplete += OnEnemyAttacksComplete;
         player = GameObject.FindWithTag("Player").GetComponent<SpaceShipManager>();
         weaponPlayer = GameObject.FindWithTag("Player").GetComponent<WeaponManager>();
         _gameOverPanel.SetActive(false);
+
+    }
+    IEnumerator ShowDialogue()
+    {
+        yield return new WaitForSeconds(2f);
+        Dialogue.instance.DisplayMainMessage();
+    }
+
+
+    public void OnEnemyAttacksComplete()
+    {
+       
+        if (!player.GetPlayerState())
+        {
+            string currentLevel = PlayerPrefs.GetString("CurrentLevel");
+            PlayerPrefs.SetString(currentLevel, "complete");
+            PauseManager.Pause(true);
+            _gameOverPanel.SetActive(true);
+        }
+        
     }
 
     public IEnumerator GameOver()

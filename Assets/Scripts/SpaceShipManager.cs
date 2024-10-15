@@ -29,7 +29,10 @@ public class SpaceShipManager : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
     }
-
+    public bool GetPlayerState()
+    {
+        return isDead; 
+    }
     private void OnEnable()
     {
         currentHealth = shipStats.hullHealth;
