@@ -63,7 +63,7 @@ public class Dialogue : MonoBehaviour
         else
         {
             // All sentences have been shown, handle what happens next (e.g., start a new scene, etc.)
-            Debug.Log("All messages displayed");
+          //  Debug.Log("All messages displayed");
             gameObject.SetActive(false);
             PauseManager.Resume();
             if(WaveSpawner.instance != null) WaveSpawner.instance.WaveStart();
