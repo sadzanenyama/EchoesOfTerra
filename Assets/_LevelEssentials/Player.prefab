@@ -81,12 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda665791c0517c4dbef3f85f657d51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 1500
-  maxSpeed: 10
-  drag: 0.5
-  dashMultiplier: 64
-  dashDuration: 0.1
-  dashHeat: 40
+  movementStats: {fileID: 11400000, guid: e03016ac9d0c31a478c418a7b9e9752c, type: 2}
   playerDash: {fileID: 8300000, guid: b4803c14d18a172428e24bf3dc3ac02a, type: 3}
 --- !u!114 &3496431499363242485
 MonoBehaviour:
