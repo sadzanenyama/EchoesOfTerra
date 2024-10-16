@@ -33,6 +33,7 @@ public class Dialogue : MonoBehaviour
         continueButton.onClick.AddListener(ShowNextMessage);
         currentMessageIndex = -1;
         currentDialogueIndex = 0;
+        gameObject.SetActive(false);
     }
 
     // Typewriter effect for Unity Text

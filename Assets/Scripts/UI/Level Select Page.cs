@@ -13,11 +13,6 @@ public class LevelSelectPage : MonoBehaviour
     [SerializeField] private GameObject newTerraText;
     [SerializeField] private GameObject oldEarthText;
 
-    private void Awake()
-    {
-        PlayerPrefs.SetInt("SampleScene", 0);
-    }
-
     public void Start()
     {
         Dialogue.instance.gameObject.SetActive(false);

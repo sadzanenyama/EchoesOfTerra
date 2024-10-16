@@ -5320,6 +5320,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5166494059620062575, guid: 8b5ec86dab5c94e4c916bc94a0650d11,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -610739770767097152, guid: 30d91de228102164aa3645d1f8fabb8c,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -53,8 +53,8 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         float sfxVol, musicVol;
 
-        sfxVol = PlayerPrefs.GetFloat("SFXVolume");
-        musicVol = PlayerPrefs.GetFloat("MusicVolume");
+        sfxVol = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
+        musicVol = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
 
         masterMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVol) * 20);
         masterMixer.SetFloat("MusicVolume", Mathf.Log10(musicVol) * 20);

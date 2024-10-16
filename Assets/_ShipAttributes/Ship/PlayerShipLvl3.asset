@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b685a6e2d9fe0cc46be81b9adadfce46, type: 3}
   m_Name: PlayerShipLvl3
   m_EditorClassIdentifier: 
-  hullHealth: 125
-  shieldHealth: 100
-  shieldRechargeRate: 16
+  hullHealth: 135
+  shieldHealth: 110
+  shieldRechargeRate: 17
   shieldRechargeDelay: 2

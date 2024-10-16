@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb7500749ea61646a4e15f725042349, type: 3}
   m_Name: PlayerEngineLvl3
   m_EditorClassIdentifier: 
-  accleration: 1800
-  maxSpeed: 16
+  accleration: 1900
+  maxSpeed: 18
   drag: 0.5
-  dashMultiplier: 68
+  dashMultiplier: 72

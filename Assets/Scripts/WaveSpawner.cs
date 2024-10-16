@@ -46,6 +46,34 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
+        /*if(Input.GetKeyDown(KeyCode.O))
+        {
+            StopCoroutine(SpawnWave(waveData.waves[waveNumber]));
+            state = SpawnState.Waiting;
+            shownDialogue = false;
+            GameObject[] melee = GameObject.FindGameObjectsWithTag("Melee");
+            GameObject[] ranged = GameObject.FindGameObjectsWithTag("Ranged");
+            GameObject[] trooper = GameObject.FindGameObjectsWithTag("Trooper");
+
+            // Disable all melee objects
+            foreach (GameObject obj in melee)
+            {
+                obj.SetActive(false);
+            }
+
+            // Disable all ranged objects
+            foreach (GameObject obj in ranged)
+            {
+                obj.SetActive(false);
+            }
+
+            // Disable all trooper objects
+            foreach (GameObject obj in trooper)
+            {
+                obj.SetActive(false);
+            }
+        }*/
+
         if (finishedLevel)
             return;
 

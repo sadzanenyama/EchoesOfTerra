@@ -20,8 +20,14 @@ public class ScreenShake : MonoBehaviour
 
     private void OnDestroy()
     {
-        spaceShip.OnTakeDamage -= DamageShake;
-        playerShoot.OnShoot -= ShootShake;
+        if (spaceShip != null)
+        {
+            spaceShip.OnTakeDamage -= DamageShake;
+        }
+        if (playerShoot != null)
+        {
+            playerShoot.OnShoot -= ShootShake;
+        }
     }
 
     void DamageShake()

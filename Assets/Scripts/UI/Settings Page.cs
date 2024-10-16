@@ -18,9 +18,9 @@ public class SettingsPage : MonoBehaviour
 
     public void Start()
     {
-        _sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+        _sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
         Debug.Log("Setting slider " + PlayerPrefs.GetFloat("SFXVolume"));
-        _musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        _musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
 
         _resDropDown.ClearOptions();
         if(ResoultionManager.ResInstance.GetScreenOptions() != null)

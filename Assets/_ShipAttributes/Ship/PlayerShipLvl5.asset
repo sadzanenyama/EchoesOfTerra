@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerShipLvl5
   m_EditorClassIdentifier: 
   hullHealth: 200
-  shieldHealth: 150
-  shieldRechargeRate: 22
+  shieldHealth: 160
+  shieldRechargeRate: 24
   shieldRechargeDelay: 1

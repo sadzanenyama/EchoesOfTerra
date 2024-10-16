@@ -119,7 +119,7 @@ public class TutorialManager : MonoBehaviour
         DeactivateAllPlayerUI();
         inplayPlayerMovementUIComplete = true;
         // call player
-        Instantiate(enemy, enemyPositionSpawn); 
+        enemy.SetActive(true);
         enemyWaveStarted = true; 
     }
 

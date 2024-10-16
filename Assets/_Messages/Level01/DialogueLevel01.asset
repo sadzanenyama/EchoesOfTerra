@@ -64,3 +64,7 @@ MonoBehaviour:
       or theirs. God\u2026 I wish it hadn\u2019t come to this."
     - "I\u2019ll try to get in contact with them, but they seem to be ignoring any
       communication hails."
+  - messengerName: Fleet admiral
+    messengerSprite: {fileID: 21300000, guid: a1d14e87d89d17642b464292867da3e7, type: 3}
+    dialogue:
+    - One last fleet. Then we must discuss something I'd rather not.

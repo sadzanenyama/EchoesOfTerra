@@ -318,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipStats: {fileID: 11400000, guid: 15551aa19c1e24848a242de6d57d5199, type: 2}
   currentHealth: 100
-  currentShield: 100
+  currentShield: 0
   shieldBreakSound: {fileID: 0}
 --- !u!195 &5288218312910010633
 NavMeshAgent:

@@ -4933,6 +4933,11 @@ PrefabInstance:
       propertyPath: sideMessage
       value: 
       objectReference: {fileID: 3723592598100285134}
+    - target: {fileID: 6584765875210773625, guid: 69b6245d0f511554fa1e97d9c746fd1b,
+        type: 3}
+      propertyPath: currentMessageIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7939261759406489421, guid: 69b6245d0f511554fa1e97d9c746fd1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5179,6 +5184,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5166494059620062575, guid: 8b5ec86dab5c94e4c916bc94a0650d11,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -610739770767097152, guid: 30d91de228102164aa3645d1f8fabb8c,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

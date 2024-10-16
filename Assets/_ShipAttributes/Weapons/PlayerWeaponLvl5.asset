@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerWeaponLvl5
   m_EditorClassIdentifier: 
   projectileSpeed: 50
-  fireRate: 7.25
+  fireRate: 7.5
   accuracy: 5
   damage: 25
   heatPerShot: 10
