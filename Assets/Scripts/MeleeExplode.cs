@@ -22,6 +22,11 @@ public class MeleeExplode : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void OnEnable()
+    {
+        explode = false;
+    }
+
     private void Update()
     {
         if (explode)
@@ -47,6 +52,7 @@ public class MeleeExplode : MonoBehaviour
         yield return new WaitForSeconds(enemyStats.fuseTime);
         GameObject explosion = ObjectPooler.Singleton.GetPooledObjectByTag("Explosion");
         explosion.GetComponent<ExplosionDamage>().Explode(explosionPosition.position);
+
         gameObject.SetActive(false);
     }
 }

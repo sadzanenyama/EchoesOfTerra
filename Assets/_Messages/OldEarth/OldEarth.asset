@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17553c14b64e3dd4899362fca8221d8f, type: 3}
+  m_Name: OldEarth
+  m_EditorClassIdentifier: 
+  messages:
+  - messengerName: Old earth
+    messengerSprite: {fileID: 21300000, guid: f27c77b8e89e4cf48ba0df34499f559f, type: 3}
+    dialogue:
+    - What are you doing? Abandoning us is not good enough?
+    - You want to kill us too? Destroy us with your machines?
+    - We're not going to let that happen.
+  - messengerName: Fleet admiral
+    messengerSprite: {fileID: 21300000, guid: a1d14e87d89d17642b464292867da3e7, type: 3}
+    dialogue:
+    - "Damn! They cut us out, Admiral. Idiots don\u2019t realize we\u2019re trying
+      to save them."
+    - "You\u2019re going to have to fend them off. Protect the mag stabilizer. I\u2019ll
+      keep trying on the communicator. "
+    - A large fleet is on route, this will not be easy.
+    - "If you pull this off though, we\u2019ll be saving billions."
+    - Let's hope New Terra can hold out.
+  - messengerName: Fleet admiral
+    messengerSprite: {fileID: 21300000, guid: a1d14e87d89d17642b464292867da3e7, type: 3}
+    dialogue:
+    - 'They''re hitting us hard back on New Terra. '
+    - God, there are so much dead. You need to hurry.
+    - I'm losing signal. Adm-....
+    - .............
+  - messengerName: Old earth
+    messengerSprite: {fileID: 21300000, guid: f27c77b8e89e4cf48ba0df34499f559f, type: 3}
+    dialogue:
+    - Stop them!
+    - We have to stop them!
+    - For the people you left behind! Show them what Earth is made of!

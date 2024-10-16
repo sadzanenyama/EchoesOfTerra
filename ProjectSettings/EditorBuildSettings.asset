@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SaveOldEarth.unity
     guid: 54a9d65b892aebb43aad83f71c20ffde
+  - enabled: 1
+    path: Assets/Scenes/NewTerra.unity
+    guid: 924593865cab64946adf3ab1cae275a2
+  - enabled: 1
+    path: Assets/Scenes/OldEarth.unity
+    guid: fe811f33c5ded154a9a443ab2c984523
   m_configObjects: {}

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
@@ -23,7 +24,6 @@ public class Dialogue : MonoBehaviour
     public int currentDialogueIndex;
 
     public static Dialogue instance;
-    public Action OnDialogueComplete;
 
 
     private void Awake()
@@ -65,26 +65,22 @@ public class Dialogue : MonoBehaviour
             // All sentences have been shown, handle what happens next (e.g., start a new scene, etc.)
             Debug.Log("All messages displayed");
             gameObject.SetActive(false);
-            PauseManager.Resume();
+            if (SceneManager.GetActiveScene().buildIndex != 0)
+                PauseManager.Resume();
             if(WaveSpawner.instance != null) WaveSpawner.instance.WaveStart();
-            OnDialogueComplete?.Invoke();
         }
     }
  
     public void DisplayMainMessage()
-    {
+    { 
         gameObject.SetActive(true);
         currentMessageIndex++;
         currentDialogueIndex = 0;
-        PauseManager.Pause(false);
+        if(SceneManager.GetActiveScene().buildIndex != 0)
+            PauseManager.Pause(false);
+        icon.sprite = levelDialogue.messages[currentMessageIndex].messengerSprite;
+        nameDisplay.text = levelDialogue.messages[currentMessageIndex].messengerName;
         StopAllCoroutines();  // Stop any previous coroutine to avoid overlapping
         StartCoroutine(TypeText(mainTextDisplay, levelDialogue.messages[currentMessageIndex].dialogue[0]));
     }
-
-
-/*    public void UpdateInGameMessage(string newText)
-    {
-        StopAllCoroutines();  // Stop any previous coroutine to avoid overlapping
-        StartCoroutine(TypeText(sideTextDisplay.GetComponent<Text>(), newText));
-    }*/
 }

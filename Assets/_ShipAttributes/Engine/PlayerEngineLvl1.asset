@@ -15,4 +15,4 @@ MonoBehaviour:
   accleration: 1500
   maxSpeed: 10
   drag: 0.5
-  dashMultiplier: 48
+  dashMultiplier: 52

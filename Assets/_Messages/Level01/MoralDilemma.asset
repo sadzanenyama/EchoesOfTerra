@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17553c14b64e3dd4899362fca8221d8f, type: 3}
-  m_Name: DialogueLevel01 1
+  m_Name: MoralDilemma
   m_EditorClassIdentifier: 
   messages:
-  - messengerName: High Admiral
+  - messengerName: Fleet Admiral
     messengerSprite: {fileID: 21300000, guid: a1d14e87d89d17642b464292867da3e7, type: 3}
     dialogue:
-    - 'Turns out the invaders were people from old earth. '
-    - Earth is dying. They cannot survive any longer and need a place to call home.
-    - 'New Terra cannot handle such a spike in population count. '
+    - Admiral, you need to make a choice that no one ever should. I'm so sorry this
+      must fall on you.
+    - You can either take the Mag Stabilzer, and restore Old Earth, but leave New
+      Terra's defenses weakend.
+    - Or focus on our own people, defend New Terra, but leave those left behind on
+      Old Earth to die.
+    - Which will it be?

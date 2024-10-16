@@ -9,65 +9,39 @@ public class LevelSelectPage : MonoBehaviour
     [SerializeField] private LevelSelection levelTwoA;
     [SerializeField] private LevelSelection levelTwoB;
     [SerializeField] private Dialogue dialogue;
-    [SerializeField] private GameObject moralChoice; 
 
+    [SerializeField] private GameObject newTerraText;
+    [SerializeField] private GameObject oldEarthText;
 
-  /*  private void Start()
+    private void Awake()
     {
-        Dialogue.instance.OnDialogueComplete += HandleDialogueEnd;
-    }*/
+        PlayerPrefs.SetInt("SampleScene", 0);
+    }
 
-    public void OnEnable()
+    public void Start()
     {
-        moralChoice.SetActive(false);
-        string levelUnlocked = PlayerPrefs.GetString("CurrentLevel");
-        if(levelUnlocked != null) 
-        { 
-            if(levelUnlocked == "LevelOne")
-            {
-                levelTwoA.SetLockedState(true);
-                levelTwoA.SetUnlocked(false);
-                levelTwoB.SetLockedState(true);
-                levelTwoB.SetUnlocked(false);
-            }
-            else if (levelUnlocked =="LevelTwoA")
-            {
-                levelTwoB.SetLockedState(true);
-                levelTwoB.SetUnlocked(false);
+        Dialogue.instance.gameObject.SetActive(false);
+        int LevelOneCompleted = PlayerPrefs.GetInt("SampleScene", 0);
 
-            }
-            else
-            {
-                levelTwoA.SetLockedState(true);
-                levelTwoA.SetUnlocked(false);
-            }
-            string status = PlayerPrefs.GetString(levelUnlocked);
-            if(status != null && status== "completed" && levelUnlocked == "LevelOne")
-            {
-                // show the dialogue display
-                dialogue.gameObject.SetActive(true); 
-                Dialogue.instance.DisplayMainMessage(); 
-            
-            }
-            
+        if (LevelOneCompleted == 0)
+        {
+            levelTwoA.SetLockedState(true);
+            levelTwoA.SetUnlocked(false);
+            levelTwoB.SetLockedState(true);
+            levelTwoB.SetUnlocked(false);
+            newTerraText.SetActive(false);
+            oldEarthText.SetActive(false);
         }
-    }
-    // display dialema choice
-    public void HandleDialogueEnd()
-    {
-        moralChoice.gameObject.SetActive(true);
-    }
-    public void ProtectOldEarth()
-    {
-        levelTwoB.SetUnlocked(true);
-        levelTwoB.SetLockedState(false);
-
-    }
-    public void SaveNewTerra()
-    {
-        levelTwoA.SetUnlocked(true);
-        levelTwoA.SetLockedState(false);
-
+        else if (LevelOneCompleted == 1)
+        {
+            Dialogue.instance.DisplayMainMessage();
+            levelTwoA.SetLockedState(false);
+            levelTwoA.SetUnlocked(true);
+            levelTwoB.SetLockedState(false);
+            levelTwoB.SetUnlocked(true);
+            newTerraText.SetActive(true);
+            oldEarthText.SetActive(true);
+        }
     }
 
     public void Back()

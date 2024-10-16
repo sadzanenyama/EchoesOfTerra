@@ -42,6 +42,12 @@ public class RangedEnemy : MonoBehaviour
         targetRotation = model.localRotation * Quaternion.Euler(0, 360, 0);
     }
 
+    private void OnEnable()
+    {
+        currentState = RangedEnemyState.Following;
+        timeTilNextDodge = 0f;
+    }
+
     private void Update()
     {
         distance = Vector3.Distance(transform.position, playerTrans.position);

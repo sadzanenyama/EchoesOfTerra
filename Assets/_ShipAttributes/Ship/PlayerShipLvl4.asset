@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hullHealth: 150
   shieldHealth: 125
-  shieldRechargeRate: 12.5
+  shieldRechargeRate: 19
   shieldRechargeDelay: 2

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17553c14b64e3dd4899362fca8221d8f, type: 3}
+  m_Name: NewTerra
+  m_EditorClassIdentifier: 
+  messages:
+  - messengerName: Fleet Admiral
+    messengerSprite: {fileID: 21300000, guid: a1d14e87d89d17642b464292867da3e7, type: 3}
+    dialogue:
+    - I understand, Admiral. I just wish there was another way. Old earth will have
+      to wait. Our New Home is the most important thing.
+    - "The enemy is ignoring all hails for communication, but I\u2019ll keep trying.
+      As of now, their entire fleet is on route. This will not be easy."
+    - So many lives are in your hands.
+  - messengerName: Old earth
+    messengerSprite: {fileID: 21300000, guid: f27c77b8e89e4cf48ba0df34499f559f, type: 3}
+    dialogue:
+    - "You\u2019re all the same, but we\u2019re not gonna die lying down!"
+  - messengerName: Fleet Admiral
+    messengerSprite: {fileID: 21300000, guid: a1d14e87d89d17642b464292867da3e7, type: 3}
+    dialogue:
+    - All those people... god...
+    - We're doing what we have to?
+    - Right?
+  - messengerName: Old earth
+    messengerSprite: {fileID: 21300000, guid: f27c77b8e89e4cf48ba0df34499f559f, type: 3}
+    dialogue:
+    - You murderers!
+    - Got all the rich and important people out-
+    - And left the right of us behind to die!

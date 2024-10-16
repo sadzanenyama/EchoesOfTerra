@@ -34,6 +34,6 @@ MonoBehaviour:
   - enemyToSpawn: {fileID: 8175491573009077134, guid: f4ed6b36c8e0ab04699017fe77052b0f,
       type: 3}
     spawnRate: 0.25
-    numToSpawn: 4
+    numToSpawn: 3
     delayToNextGroup: 2
     spawnPosition: 7

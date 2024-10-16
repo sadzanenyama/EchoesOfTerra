@@ -2,13 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState { Spawning, Waiting, BetweenWave};
     public SpawnState state = SpawnState.BetweenWave;
     [SerializeField] private WaveMasterSO waveData;
-    public Action enemyAttacksComplete; 
     public int waveNumber;
 
     protected float searchCountdown = 1f;
@@ -21,8 +21,14 @@ public class WaveSpawner : MonoBehaviour
     public List<int> wavesToShowDialogue = new List<int>();
     bool shownDialogue;
 
+    bool finishedLevel = false;
+
+    private AudioSource audioSource;
+    public AudioClip victorySound;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         instance = this;
 
         state = SpawnState.BetweenWave;
@@ -40,6 +46,8 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (finishedLevel)
+            return;
 
         if (state == SpawnState.BetweenWave)
         {
@@ -81,11 +89,29 @@ public class WaveSpawner : MonoBehaviour
     {
         waveNumber++;
         state = SpawnState.BetweenWave;
-        if (waveNumber >= waveData.waves.Length - 1)
+        if (waveNumber >= waveData.waves.Length)
         {
-            enemyAttacksComplete.Invoke(); 
-            Debug.Log("Finished level");
+            StartCoroutine(FinishLevel());
         }
+    }
+
+    IEnumerator FinishLevel()
+    {
+        finishedLevel = true;
+        PauseManager.Pause(false);
+        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 1);
+
+        audioSource.PlayOneShot(victorySound, 0.5f);
+
+        yield return new WaitForSeconds(2.5f);
+
+        if(SceneManager.GetActiveScene().name == "SampleScene")
+            SceneManager.LoadScene("Main");
+        else if(SceneManager.GetActiveScene().name == "NewTerra")
+            SceneManager.LoadScene("SaveNewTerra");
+        else if (SceneManager.GetActiveScene().name == "OldEarth")
+            SceneManager.LoadScene("SaveOldEarth");
+
     }
 
     public void WaveStart()

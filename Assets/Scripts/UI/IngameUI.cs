@@ -53,19 +53,9 @@ public class IngameUI : MonoBehaviour
         }
     }
 
-  
-
-    private void OnDisable()
-    {
-        // Unsubscribe from the event to avoid memory leaks
-        if (WaveSpawner.instance != null)
-        {
-            WaveSpawner.instance.enemyAttacksComplete -= OnEnemyAttacksComplete;
-        }
-    }
+ 
     public void Start()
     {
-        WaveSpawner.instance.enemyAttacksComplete += OnEnemyAttacksComplete;
         player = GameObject.FindWithTag("Player").GetComponent<SpaceShipManager>();
         weaponPlayer = GameObject.FindWithTag("Player").GetComponent<WeaponManager>();
         _gameOverPanel.SetActive(false);
@@ -75,20 +65,6 @@ public class IngameUI : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Dialogue.instance.DisplayMainMessage();
-    }
-
-
-    public void OnEnemyAttacksComplete()
-    {
-       
-        if (!player.GetPlayerState())
-        {
-            string currentLevel = PlayerPrefs.GetString("CurrentLevel");
-            PlayerPrefs.SetString(currentLevel, "complete");
-            PauseManager.Pause(true);
-            _gameOverPanel.SetActive(true);
-        }
-        
     }
 
     public IEnumerator GameOver()

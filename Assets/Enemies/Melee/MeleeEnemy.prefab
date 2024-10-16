@@ -127,7 +127,9 @@ GameObject:
   - component: {fileID: 1026005195436487529}
   - component: {fileID: 1217103579823960041}
   - component: {fileID: 309295514040124538}
-  - component: {fileID: 7448268111166003176}
+  - component: {fileID: 6074180037350569784}
+  - component: {fileID: 5066073082637884682}
+  - component: {fileID: 6294674713133187219}
   m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
@@ -200,8 +202,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7448268111166003176
-MeshCollider:
+--- !u!65 &6074180037350569784
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -218,10 +220,51 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 2134cdb18800a214bad0b50e88e7bb55, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 2.344019, y: 3.7054968, z: 2.3002875}
+  m_Center: {x: 0, y: 0.03153062, z: 0.000000119208785}
+--- !u!65 &5066073082637884682
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5700038585017525529}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.687458, y: 3.7602205, z: 2.3002875}
+  m_Center: {x: 1.6687593, y: -3.6069033, z: 0.00000011931027}
+--- !u!65 &6294674713133187219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5700038585017525529}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7421703, y: 3.8148985, z: 2.3002875}
+  m_Center: {x: -1.7234735, y: -3.5795643, z: 0.00000011922779}
 --- !u!1 &8175491573009077134
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +319,6 @@ MonoBehaviour:
   shipStats: {fileID: 11400000, guid: 15551aa19c1e24848a242de6d57d5199, type: 2}
   currentHealth: 100
   currentShield: 100
-  pauseManager: {fileID: 0}
   shieldBreakSound: {fileID: 0}
 --- !u!195 &5288218312910010633
 NavMeshAgent:

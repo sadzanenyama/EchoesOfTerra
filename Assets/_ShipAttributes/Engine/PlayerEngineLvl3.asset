@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerEngineLvl3
   m_EditorClassIdentifier: 
   accleration: 1800
-  maxSpeed: 14
+  maxSpeed: 16
   drag: 0.5
   dashMultiplier: 68
