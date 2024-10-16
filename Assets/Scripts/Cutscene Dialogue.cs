@@ -52,7 +52,7 @@ public class CutsceneDialogue : MonoBehaviour
         else
         {
             // All sentences have been shown, handle what happens next (e.g., start a new scene, etc.)
-            Debug.Log("All messages displayed, Start Game?");
+          //  Debug.Log("All messages displayed, Start Game?");
             // ingameUI.SetActive(true);
             // DialogueUI.SetActive(false);
         }
